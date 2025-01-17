@@ -1,0 +1,24 @@
+.service {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .service .stat {
+    margin: 0 15px;
+    text-align: center;
+  }
+  
+  .service .serv h3 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .sevice .serv p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    color: #666;
+  }
+  

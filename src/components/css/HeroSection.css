@@ -1,0 +1,130 @@
+/* Style untuk Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
+  margin: 20px auto; /* Pusatkan kontainer */
+  max-width: 1470px; /* Batasi lebar maksimal */
+}
+
+.hero-content {
+  flex: 0.9;
+  text-align: left;
+  margin-right: 50px; /* Tambahkan jarak dengan gambar */
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px; /* Tambahkan margin bawah */
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5; /* Tambahkan line-height untuk keterbacaan */
+}
+
+.hire-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none; /* Hilangkan underline */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hire-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Tambahkan efek zoom */
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center; /* Agar gambar terlihat lebih proporsional */
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 400px; /* Tambahkan batas maksimal tinggi */
+  border-radius: 10px;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hire-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    max-width: 80%; /* Batasi lebar maksimal */
+    margin-top: 20px;
+  }
+}
+
+/* Responsif Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hire-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    max-width: 100%; /* Pastikan gambar memanfaatkan lebar penuh */
+    margin-top: 20px;
+  }
+}
