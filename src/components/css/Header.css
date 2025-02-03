@@ -1,3 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Isi ruang di antara header dan footer */
+}
+
 /* Style untuk Header */
 .header {
   display: flex;
@@ -16,12 +27,12 @@
 .logo-image {
   width: 50px;
   height: auto;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Efek transisi untuk transform dan opacity */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .logo-image:hover {
-  transform: scale(1.2) rotate(5deg); /* Memperbesar logo dan sedikit memutarnya */
-  opacity: 0.9; /* Sedikit mengurangi opacity untuk efek interaktif */
+  transform: scale(1.2) rotate(5deg);
+  opacity: 0.9;
 }
 
 .menu {
@@ -39,10 +50,16 @@
   color: #333;
   font-weight: bold;
   transition: color 0.3s;
+  padding: 10px 15px;
 }
 
 .menu ul li a:hover {
   color: #007bff;
+}
+
+.menu ul li a.active {
+  color: #007bff; /* Hanya mengubah warna teks tanpa background */
+  font-weight: bold; /* Opsional: Bisa ditambahkan supaya terlihat lebih tegas */
 }
 
 .social-icons {
@@ -52,7 +69,7 @@
 
 /* Hamburger Menu for Small Devices */
 .menu-toggle {
-  display: none; /* Default: hidden */
+  display: none;
   background: none;
   border: none;
   font-size: 24px;
@@ -61,20 +78,21 @@
 
 @media (max-width: 768px) {
   .menu {
-    display: none; /* Hide menu by default */
+    display: none;
     position: absolute;
-    top: 60px;
+    top: 100px;
     right: 0;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     flex-direction: column;
-    align-items: center; /* Center menu items */
+    align-items: center;
     padding: 10px 0;
+    z-index: 1000;
   }
 
   .menu.open {
-    display: flex; /* Show menu when open */
+    display: flex;
   }
 
   .menu ul {
@@ -91,19 +109,19 @@
   }
 
   .menu-toggle {
-    display: block; /* Show hamburger on small devices */
+    display: block;
   }
 }
 
 .social-icons a {
   color: #0a0a0a;
   font-size: 18px;
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Menambahkan transisi */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .social-icons a:hover {
-  color: #007bff; /* Ubah warna saat di-hover */
-  transform: scale(1.2); /* Sedikit memperbesar ikon */
+  color: #007bff;
+  transform: scale(1.2);
 }
 
 /* Responsif tambahan untuk memastikan menu tetap rapi */
@@ -112,3 +130,5 @@
     font-size: 16px;
   }
 }
+
+/* Tambahkan JavaScript untuk menu toggle */

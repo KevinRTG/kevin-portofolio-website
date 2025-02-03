@@ -7,6 +7,7 @@ import Projects from './components/pages/Projects';
 import Services from './components/pages/Services';
 import Contact from './components/pages/Contact';
 
+
 const App = () => {
   return (
     <Router>
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
     </Router>
   );
 };

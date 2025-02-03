@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './css/Header.css';
 import logo from '../img/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Dapatkan path halaman saat ini
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Tutup menu saat salah satu item diklik (khusus mobile)
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -22,11 +28,11 @@ const Header = () => {
       </button>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/" className={location.pathname === "/" ? "active" : ""} onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/about" className={location.pathname === "/about" ? "active" : ""} onClick={closeMenu}>About</Link></li>
+          <li><Link to="/services" className={location.pathname === "/services" ? "active" : ""} onClick={closeMenu}>Services</Link></li>
+          <li><Link to="/projects" className={location.pathname === "/projects" ? "active" : ""} onClick={closeMenu}>Projects</Link></li>
+          <li><Link to="/contact" className={location.pathname === "/contact" ? "active" : ""} onClick={closeMenu}>Contact</Link></li>
         </ul>
       </div>
       <div className="social-icons">

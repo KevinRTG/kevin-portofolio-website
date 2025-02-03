@@ -1,32 +1,33 @@
 /* Gaya untuk section */
 .about-section {
   background-color: #f9f9f9;
-  padding: 80px 20px;
+  padding: 60px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
-  margin: 20px auto; /* Pusatkan kontainer */
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek timbul lembut */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* Efek hover */
 .about-section:hover {
-  transform: scale(1.02);
-  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow lebih besar saat hover */
+  transform: translateY(-3px); /* Efek sedikit naik */
 }
 
 /* Gaya untuk div.content */
-.content {
+.about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 h2 {
   font-size: 2rem;
   color: #333333;
   margin-bottom: 20px;
-  text-align: center;
   transition: color 0.3s ease;
 }
 
@@ -34,23 +35,37 @@ h2:hover {
   color: #007acc;
 }
 
-p {
+/* Gaya untuk paragraf */
+/* Efek hover paragraf hanya berlaku di About */
+.about-content p {
   font-size: 1.1rem;
   color: #555555;
   line-height: 1.6;
   margin-bottom: 15px;
   text-align: justify;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
 }
 
+/* Efek hover paragraf hanya di halaman About */
+.about-content p:hover {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Efek timbul halus */
+  transform: scale(1.02);
+}
+
+
+/* Gaya untuk daftar bahasa pemrograman */
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 ul li {
-  display: flex; /* Susun ikon dan teks secara horizontal */
-  align-items: center; /* Pusatkan secara vertikal */
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   color: #555555;
   transition: color 0.3s ease, padding-left 0.3s ease;
@@ -58,12 +73,18 @@ ul li {
 
 ul li:hover {
   color: #007acc;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
-/* Gaya untuk ikon di dalam list */
+/* Gaya untuk ikon */
 .icon {
-  width: 50px; /* Ukuran ikon */
-  height: 50px; /* Ukuran ikon */
-  margin-right: 10px; /* Spasi antara ikon dan teks */
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover ikon */
+.icon:hover {
+  transform: scale(1.1);
 }
