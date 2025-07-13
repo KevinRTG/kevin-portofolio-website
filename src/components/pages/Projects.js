@@ -6,7 +6,7 @@ function Projects() {
     {
       title: "Company Profile",
       description: "I created this company profile project to promote it to a certain company.",
-      image: "https://via.placeholder.com/300",
+      image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/preview.png?raw=true",
       link: "https://github.com/KevinRTG/CompanyProfile",
     },
 
