@@ -5,10 +5,9 @@ function About() {
   return (
     <section className="about-section">
       <div className="about-content">
-        <h2>Tentang Saya</h2>
+        <h2>About Me</h2>
         <p>
-          Saya adalah mahasiswa dari Universitas Pelita Bangsa, angkatan tahun 2021, yang mengambil program studi Teknik Informatika.
-          Selama menjalani program studi ini, saya telah belajar dan mengenal berbagai bahasa pemrograman seperti:
+        I am a student from Pelita Bangsa University, class of 2021, majoring in Computer Engineering. During this study program, I have learned and gotten to know various programming languages such as:
         </p>
         <ul>
           <li>
@@ -33,8 +32,7 @@ function About() {
           </li>
         </ul>
         <p>
-          Selain itu, saya juga memiliki ketertarikan lebih pada pembuatan desain UI/UX, baik untuk website maupun aplikasi mobile.
-          Saya selalu ingin terus berkembang dan belajar untuk meningkatkan keterampilan saya di bidang Front-end ini.
+          In addition, I also have a greater interest in UI/UX design, both for websites and mobile applications. I always want to continue to grow and learn to improve my skills in this Front-end field.
         </p>
       </div>
     </section>
