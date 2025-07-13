@@ -1,6 +1,6 @@
 import React from 'react';
 import kevinPhoto from '../../img/kevin_photo.png'; // Impor gambar
-import resumeFile from '../../files/Resume_Kevin.pdf'; // Impor file resume
+import resumeFile from '../../files/CV Kevin_Suyadi_Ritonga.pdf'; // Impor file resume
 import '../css/Home.css';
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         {/* Tombol untuk mengunduh file */}
         <a
           href={resumeFile} // Path file untuk diunduh
-          download="Resume_Kevin.pdf" // Nama file saat diunduh
+          download="CV Kevin_Suyadi_Ritonga.pdf" // Nama file saat diunduh
           className="hire-button"
         >
           Download Resume
