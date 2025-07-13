@@ -13,7 +13,7 @@ function Contact() {
           <p><strong>Alamat :</strong> Jl. Kenanga 1 No. 18 Blok D 21, Wanasari, Cibitung, Jawa Barat, Indonesia</p>
         </div>
         <form className="contact-form">
-          <h3>Hubungi Saya</h3>
+          <h3>Contact Me</h3>
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
           <textarea placeholder="Your message" rows="5" required></textarea>
