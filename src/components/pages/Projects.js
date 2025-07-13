@@ -4,23 +4,12 @@ import '../css/Projects.css';
 function Projects() {
   const projects = [
     {
-      title: "Proyek 1",
-      description: "Deskripsi singkat proyek pertama.",
+      title: "Company Profile",
+      description: "I created this company profile project to promote it to a certain company.",
       image: "https://via.placeholder.com/300",
-      link: "#",
+      link: "https://github.com/KevinRTG/CompanyProfile",
     },
-    {
-      title: "Proyek 2",
-      description: "Deskripsi singkat proyek kedua.",
-      image: "https://via.placeholder.com/300",
-      link: "#",
-    },
-    {
-      title: "Proyek 3",
-      description: "Deskripsi singkat proyek ketiga.",
-      image: "https://via.placeholder.com/300",
-      link: "#",
-    },
+
   ];
 
   return (
