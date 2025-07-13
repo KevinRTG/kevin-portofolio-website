@@ -4,7 +4,7 @@ import '../css/Contact.css';
 function Contact() {
   return (
     <section id="contact" className="contact">
-      <h2 className="contact-title">Kontak Saya</h2>
+      <h2 className="contact-title">Contact Me</h2>
       <div className="contact-container">
         <div className="contact-info">
           <p><strong>Nama :</strong> Kevin Suyadi Ritonga</p>
@@ -14,10 +14,10 @@ function Contact() {
         </div>
         <form className="contact-form">
           <h3>Hubungi Saya</h3>
-          <input type="text" placeholder="Nama Anda" required />
-          <input type="email" placeholder="Email Anda" required />
-          <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-          <button type="submit">Kirim Pesan</button>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </section>
