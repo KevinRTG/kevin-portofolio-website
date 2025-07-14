@@ -42,7 +42,7 @@ function About() {
         <ul className="skills-list">
           <li>Responsive Web Design</li>
           <li>Wireframing & Prototyping (Figma)</li>
-          <li>Next.js Front-end Development+</li>
+          <li>Next.js Front-end Development</li>
           <li>React.js Functional Components</li>
           <li>Tailwind CSS & Bootstrap</li>
           <li>Version Control (Git & GitHub)</li>
