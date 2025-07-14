@@ -30,7 +30,7 @@ function Projects() {
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <a href={project.link} className="project-link">
-                Lihat Proyek
+                View Projects
               </a>
             </div>
           </div>
