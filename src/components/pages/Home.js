@@ -1,6 +1,6 @@
 import React from 'react';
-import kevinPhoto from '../../img/kevin_photo.png'; // Impor gambar
-import resumeFile from '../../files/CV Kevin_Suyadi_Ritonga.pdf'; // Impor file resume
+import { Link } from 'react-router-dom'; 
+import kevinPhoto from '../../img/kevin_photo.png';
 import '../css/Home.css';
 
 const Home = () => {
@@ -14,14 +14,10 @@ const Home = () => {
         <p>
           UI/UX Designer, Front-End Development <br /> From Indonesia
         </p>
-        {/* Tombol untuk mengunduh file */}
-        <a
-          href={resumeFile} // Path file untuk diunduh
-          download="CV Kevin_Suyadi_Ritonga.pdf" // Nama file saat diunduh
-          className="hire-button"
-        >
-          Download Resume
-        </a>
+        {/* Tombol menuju halaman About */}
+        <Link to="/about" className="hire-button">
+          About Me
+        </Link>
       </div>
       <div className="hero-image">
         <img src={kevinPhoto} alt="Kevin" />
