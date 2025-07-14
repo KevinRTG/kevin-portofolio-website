@@ -51,7 +51,7 @@ function About() {
 
         <h3>Tools I Use</h3>
         <div className="tools-grid">
-          <img src="/images/vscode.png" alt="VS Code" className="tool-icon" />
+          <img src="/https://logospng.org/wp-content/uploads/visual-studio-code.png" alt="VS Code" className="tool-icon" />
           <img src="/images/figma.png" alt="Figma" className="tool-icon" />
           <img src="/images/git.png" alt="Git" className="tool-icon" />
           <img src="/images/github.png" alt="GitHub" className="tool-icon" />
