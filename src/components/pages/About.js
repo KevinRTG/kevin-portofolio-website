@@ -13,23 +13,23 @@ function About() {
 
         <ul className="tech-list">
           <li>
-            <img src="/images/react.png" alt="Logo React.js" className="icon" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js Logo" className="icon" />
             <span>React JS</span>
           </li>
           <li>
-            <img src="/images/javascript-logo.png" alt="Logo JavaScript" className="icon" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" className="icon" />
             <span>JavaScript</span>
           </li>
           <li>
-            <img src="/images/php-logo.png" alt="Logo PHP" className="icon" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo" className="icon" />
             <span>PHP</span>
           </li>
           <li>
-            <img src="/images/html-5.png" alt="Logo HTML" className="icon" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo" className="icon" />
             <span>HTML</span>
           </li>
           <li>
-            <img src="/images/css-logo.png" alt="Logo CSS" className="icon" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" className="icon" />
             <span>CSS</span>
           </li>
         </ul>
@@ -51,11 +51,11 @@ function About() {
 
         <h3>Tools I Use</h3>
         <div className="tools-grid">
-          <img src="/https://logospng.org/wp-content/uploads/visual-studio-code.png" alt="VS Code" className="tool-icon" />
-          <img src="/images/figma.png" alt="Figma" className="tool-icon" />
-          <img src="/images/git.png" alt="Git" className="tool-icon" />
-          <img src="/images/github.png" alt="GitHub" className="tool-icon" />
-          <img src="/images/terminal.png" alt="Terminal" className="tool-icon" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" className="tool-icon" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" className="tool-icon" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="tool-icon" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="tool-icon" />
+          <img src="https://cdn-icons-png.flaticon.com/512/4603/4603959.png" alt="Terminal" className="tool-icon" />
         </div>
 
         <h3>Education</h3>
