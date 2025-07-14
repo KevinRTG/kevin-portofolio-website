@@ -6,10 +6,10 @@ html, body {
 }
 
 main {
-  flex: 1; /* Isi ruang di antara header dan footer */
+  flex: 1;
 }
 
-/* Style untuk Header */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,6 +17,7 @@ main {
   padding: 20px 50px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .logo-container {
@@ -58,8 +59,8 @@ main {
 }
 
 .menu ul li a.active {
-  color: #007bff; /* Hanya mengubah warna teks tanpa background */
-  font-weight: bold; /* Opsional: Bisa ditambahkan supaya terlihat lebih tegas */
+  color: #007bff;
+  font-weight: bold;
 }
 
 .social-icons {
@@ -67,20 +68,29 @@ main {
   gap: 15px;
 }
 
-/* Hamburger Menu for Small Devices */
+/* Hamburger Menu Button */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
 }
 
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   .menu {
     display: none;
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 0;
     right: 0;
     background: #fff;
@@ -114,10 +124,6 @@ main {
   .menu ul li a {
     font-size: 18px;
   }
-
-  .menu-toggle {
-    display: block;
-  }
 }
 
 .social-icons a {
@@ -131,7 +137,6 @@ main {
   transform: scale(1.2);
 }
 
-/* Responsif tambahan untuk memastikan menu tetap rapi */
 @media (max-width: 480px) {
   .menu ul li a {
     font-size: 16px;
