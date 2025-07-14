@@ -81,14 +81,17 @@ main {
     display: none;
     position: absolute;
     top: 100px;
+    left: 0;
     right: 0;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 10px 0;
     z-index: 1000;
+    text-align: center;
   }
 
   .menu.open {
@@ -98,6 +101,10 @@ main {
   .menu ul {
     flex-direction: column;
     gap: 15px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu ul li {
@@ -130,5 +137,3 @@ main {
     font-size: 16px;
   }
 }
-
-/* Tambahkan JavaScript untuk menu toggle */
