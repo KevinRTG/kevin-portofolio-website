@@ -45,6 +45,29 @@ function Contact() {
           <p>{status}</p>
         </form>
       </div>
+
+      <div className="additional-content">
+        <h3>Find Me On</h3>
+        <ul className="social-links">
+          <li><a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://github.com/Vinez666" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+
+        <h3>My Location</h3>
+        <div className="map-container">
+          <iframe
+            title="Kevin's Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63458.418577138495!2d107.1036725!3d-6.2438009999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6985872cc8f43f%3A0x43159d6778f424ce!2sKec.%20Cibitung%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1752749095697!5m2!1sid!2sid"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </section>
   );
 }
