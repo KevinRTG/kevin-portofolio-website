@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import Projects from './components/pages/Projects';
 import Services from './components/pages/Services';
 import Contact from './components/pages/Contact';
+import Footer from './components/Footer'; // Tambahkan import Footer
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      <Footer /> {/* Tambahkan Footer di sini */}
     </Router>
   );
 };
