@@ -90,11 +90,8 @@ main {
   .menu {
     display: none;
     position: absolute;
-HEAD
     top: 100px;
-
     top: 70px;
-eb2adb7aca0de4b24c6ffdf511c35b1d80225899
     left: 0;
     right: 0;
     background: #fff;
