@@ -38,7 +38,7 @@ const Header = () => {
         <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-youtube"></i>
         </a>
-        <a href="https://github.com/Vinez666" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-github"></i>
         </a>
         <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer">
