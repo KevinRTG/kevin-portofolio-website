@@ -13,7 +13,7 @@ function Contact() {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const res = await fetch('https://kevin-backend-ashen.vercel.app/contact', {
+      const res = await fetch('https://kevin-backend-seven.vercel.app/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
