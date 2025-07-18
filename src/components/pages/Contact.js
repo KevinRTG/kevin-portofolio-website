@@ -11,10 +11,10 @@ function Contact() {
   };
 
   const validateForm = () => {
-    if (!form.name.trim()) return 'Nama harus diisi';
-    if (!form.email.trim()) return 'Email harus diisi';
-    if (!/\S+@\S+\.\S+/.test(form.email)) return 'Format email tidak valid';
-    if (!form.message.trim()) return 'Pesan harus diisi';
+    if (!form.name.trim()) return 'Name must be filled in';
+    if (!form.email.trim()) return 'Email must be filled in';
+    if (!/\S+@\S+\.\S+/.test(form.email)) return 'Invalid email format';
+    if (!form.message.trim()) return 'Message must be filled in';
     return null;
   };
 
@@ -28,7 +28,7 @@ function Contact() {
     }
 
     setIsLoading(true);
-    setStatus('Mengirim pesan...');
+    setStatus('Sending messages...');
     
     try {
       const res = await fetch('https://kevin-backend-seven.vercel.app/contact', {
@@ -42,11 +42,11 @@ function Contact() {
       }
       
       const data = await res.json();
-      setStatus('Pesan berhasil dikirim! Terima kasih.');
+      setStatus('Message sent successfully! Thank you.');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
       console.error('Error sending message:', err);
-      setStatus('Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung via WhatsApp.');
+      setStatus('Failed to send message. Please try again or contact us directly via WhatsApp.');
     } finally {
       setIsLoading(false);
     }
@@ -61,7 +61,7 @@ function Contact() {
 
   const socialLinks = [
     { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: '🎥' },
-    { name: 'GitHub', url: 'https://github.com/Vinez666', icon: '💻' },
+    { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: '💻' },
     { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: '📷' }
   ];
 
@@ -102,7 +102,7 @@ function Contact() {
                 <input 
                   type="text" 
                   name="name" 
-                  placeholder="Nama Anda" 
+                  placeholder="Your Name" 
                   required 
                   value={form.name} 
                   onChange={handleChange}
@@ -114,7 +114,7 @@ function Contact() {
                 <input 
                   type="email" 
                   name="email" 
-                  placeholder="Email Anda" 
+                  placeholder="Your Email" 
                   required 
                   value={form.email} 
                   onChange={handleChange}
@@ -125,7 +125,7 @@ function Contact() {
               <div className="form-group">
                 <textarea 
                   name="message" 
-                  placeholder="Pesan Anda" 
+                  placeholder="Your message " 
                   rows="5" 
                   required 
                   value={form.message} 
@@ -135,10 +135,10 @@ function Contact() {
                 ></textarea>
               </div>
               <button type="submit" disabled={isLoading} className="form-button">
-                {isLoading ? 'Mengirim...' : 'Kirim Pesan'}
+                {isLoading ? 'Sending...' : 'Send message'}
               </button>
               {status && (
-                <p className={`status-message ${status.includes('berhasil') ? 'success' : 'error'}`}>
+                <p className={`status-message ${status.includes('succes') ? 'success' : 'error'}`}>
                   {status}
                 </p>
               )}

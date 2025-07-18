@@ -6,21 +6,21 @@ const Services = () => {
     {
       id: 1,
       title: "UI/UX Design",
-      description: "Merancang antarmuka yang intuitif dan pengalaman pengguna yang optimal menggunakan Figma dan prinsip design thinking.",
+      description: "Designing intuitive interfaces and optimal user experiences using Figma and design thinking principles.",
       icon: "🎨",
       features: ["Wireframing", "Prototyping", "User Research", "Design System"]
     },
     {
       id: 2,
       title: "Front-End Development",
-      description: "Mengembangkan website responsif dan interaktif menggunakan React.js, Next.js, dan teknologi modern lainnya.",
+      description: "Developing responsive and interactive websites using React.js, Next.js, and other modern technologies.",
       icon: "💻",
       features: ["React.js", "Next.js", "Responsive Design", "Performance Optimization"]
     },
     {
       id: 3,
       title: "Website Maintenance",
-      description: "Pemeliharaan dan update website untuk memastikan performa optimal dan keamanan yang terjaga.",
+      description: "Website maintenance and updates to ensure optimal performance and security.",
       icon: "🔧",
       features: ["Bug Fixes", "Security Updates", "Performance Monitoring", "Content Updates"]
     }
@@ -31,7 +31,7 @@ const Services = () => {
       <div className="services-container">
         <h2 className="services-title">My Services</h2>
         <p className="services-description">
-          Layanan profesional yang saya tawarkan untuk membantu mewujudkan visi digital Anda
+          The professional services I offer to help realize your digital vision
         </p>
         
         <div className="services-grid">
