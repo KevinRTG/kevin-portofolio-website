@@ -19,69 +19,96 @@ const About = () => {
     { name: "Terminal", icon: "https://cdn-icons-png.flaticon.com/512/4603/4603959.png" }
   ];
 
+  const services = [
+    "UI/UX Design & Prototyping",
+    "Wireframing & User Research", 
+    "Next.js Front-end Development",
+    "React.js Functional Components",
+    "Tailwind CSS & Bootstrap",
+    "Version Control (Git & GitHub)"
+  ];
+
   return (
-    <section id="about" className="about-section">
-      <div className="about-content">
-        <h2>About Me</h2>
+    <section className="about">
+      <div className="about-container">
+        <h2 className="about-title">About Me</h2>
+        <p className="about-description">
+          Passionate Computer Engineering student with expertise in UI/UX Design and Front-End Development
+        </p>
         
-        <p>
-          Hello! I am Kevin Suyadi Ritonga, a Computer Engineering student at Pelita Bangsa University
-          with a passion for UI/UX Design and Front-End Development. I enjoy creating
-          engaging and functional digital experiences.
-        </p>
+        <div className="about-content">
+          <div className="about-intro">
+            <p>
+              Hello! I am Kevin Suyadi Ritonga, a Computer Engineering student at Pelita Bangsa University
+              with a passion for UI/UX Design and Front-End Development. I enjoy creating
+              engaging and functional digital experiences.
+            </p>
+            <p>
+              My journey in the world of technology began with an interest in web design and development.
+              I continue to learn and hone my skills in creating user-friendly and responsive interfaces using modern technology.
+            </p>
+          </div>
 
-        <h3>Background</h3>
-        <p>
-          My journey in the world of technology began with an interest in web design and development.
-          I continue to learn and hone my skills in creating user-friendly and responsive interfaces using modern technology.
-        </p>
+          <div className="about-section">
+            <h3 className="section-title">Technical Skills</h3>
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <div key={index} className="skill-card">
+                  <img src={skill.icon} alt={skill.name} className="skill-icon" />
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <h3>Technical Skills</h3>
-        <ul className="skills-list">
-          {skills.map((skill, index) => (
-            <li key={index}>
-              <img src={skill.icon} alt={skill.name} className="icon" />
-              <span>{skill.name}</span>
-            </li>
-          ))}
-        </ul>
+          <div className="about-section">
+            <h3 className="section-title">What I Do</h3>
+            <div className="services-grid">
+              {services.map((service, index) => (
+                <div key={index} className="service-item">
+                  <span className="service-bullet">•</span>
+                  <span>{service}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <h3>What I Do</h3>
-        <ul className="tech-list">
-          <li>UI/UX Design & Prototyping</li>
-          <li>Wireframing & User Research</li>
-          <li>Next.js Front-end Development</li>
-          <li>React.js Functional Components</li>
-          <li>Tailwind CSS & Bootstrap</li>
-          <li>Version Control (Git & GitHub)</li>
-        </ul>
+          <div className="about-section">
+            <h3 className="section-title">Tools I Use</h3>
+            <div className="tools-grid">
+              {tools.map((tool, index) => (
+                <div key={index} className="tool-card">
+                  <img 
+                    src={tool.icon} 
+                    alt={tool.name} 
+                    className="tool-icon"
+                    title={tool.name}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <h3>Tools I Use</h3>
-        <div className="tools-grid">
-          {tools.map((tool, index) => (
-            <img 
-              key={index}
-              src={tool.icon} 
-              alt={tool.name} 
-              className="tool-icon"
-              title={tool.name}
-            />
-          ))}
+          <div className="about-section">
+            <h3 className="section-title">Education</h3>
+            <div className="education-card">
+              <h4 className="education-title">Pelita Bangsa University</h4>
+              <div className="education-details">
+                <p><strong>Major:</strong> Computer Engineering</p>
+                <p><strong>Year:</strong> 2021 – Present</p>
+                <p><strong>Relevant Courses:</strong> Web Programming, Human Computer Interaction, Mobile Programming, Database Systems</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="about-section">
+            <h3 className="section-title">My Goal</h3>
+            <p className="goal-text">
+              I aspire to become a professional Front-End Developer who not only writes clean code,
+              but also understands user experience. I hope to work in a team that shares the same passion for building impactful digital products.
+            </p>
+          </div>
         </div>
-
-        <h3>Education</h3>
-        <div className="education-box">
-          <h4>Pelita Bangsa University</h4>
-          <p><strong>Major:</strong> Computer Engineering</p>
-          <p><strong>Year:</strong> 2021 – Present</p>
-          <p><strong>Relevant Courses:</strong> Web Programming, Human Computer Interaction, Mobile Programming, Database Systems</p>
-        </div>
-
-        <h3>My Goal</h3>
-        <p>
-         I aspire to become a professional Front-End Developer who not only writes clean code,
-         but also understands user experience. I hope to work in a team that shares the same passion for building impactful digital products.
-        </p>
       </div>
     </section>
   );
