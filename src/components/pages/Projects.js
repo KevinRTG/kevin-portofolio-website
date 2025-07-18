@@ -10,6 +10,15 @@ function Projects() {
       link: "https://github.com/KevinRTG/CompanyProfile",
     },
 
+    {
+      title: "Jemaat App",
+      description: "I created this congregation app project to be implemented in church organizations, which allows congregations to register through this web-based Jemaat App.",
+      image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/jemaatapppreview.png?raw=true",
+      link: "https://sistem-pengelola-data-jemaat.vercel.app/",
+    },
+
+
+
   ];
 
   return (

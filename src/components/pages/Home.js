@@ -19,11 +19,11 @@ const Home = () => {
             <Link to="/about" className="home-button">
               About Me
             </Link>
-          </div>
-          <div className="hero-image">
+           </div>
+           <div className="hero-image">
             <img src={kevinPhoto} alt="Kevin Suyadi Ritonga" className="home-photo" />
+           </div>
           </div>
-        </div>
       </div>
     </section>
   );
