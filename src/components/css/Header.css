@@ -5,6 +5,10 @@ body {
   flex-direction: column;
 }
 
+body.menu-open-body {
+  overflow: hidden;
+}
+
 main {
   flex: 1;
 }
@@ -162,7 +166,6 @@ main {
 .menu-toggle {
   display: none;
   background: none;
-  border: none;
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -174,13 +177,15 @@ main {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  background-color: rgba(0, 123, 255, 0.05);
-  border: 2px solid rgba(0, 123, 255, 0.1);
+  background-color: rgba(0, 123, 255, 0.1);
+  border: 2px solid rgba(0, 123, 255, 0.2);
+  margin-left: 10px;
+  z-index: 1002; /* Ensure toggle is above menu */
 }
 
 .menu-toggle:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  border-color: rgba(0, 123, 255, 0.2);
+  background-color: rgba(0, 123, 255, 0.15);
+  border-color: rgba(0, 123, 255, 0.3);
   transform: scale(1.05);
 }
 
@@ -215,6 +220,13 @@ main {
 /* Menu Overlay */
 .menu-overlay {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
 }
 
 /* Mobile Styles */
@@ -225,8 +237,10 @@ main {
 
   .header-nav {
     gap: 15px;
+    position: relative;
   }
 
+  /* Menu Toggle Button - Mobile */
   .menu-toggle {
     display: flex;
     order: 2;
@@ -246,30 +260,33 @@ main {
 
   /* Mobile Menu */
   .menu {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
-    top: 100%;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     background: #fff;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 0 0 15px 15px;
-    padding: 30px 0;
+    padding: 80px 0 30px;
     z-index: 999;
-    transform: translateY(-100%);
     opacity: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    overflow-y: auto;
   }
 
-  .menu-open {
+  /* When menu is open */
+  .menu.menu-open {
     display: block;
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .menu-list {
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     width: 100%;
     align-items: center;
     padding: 0 20px;
@@ -311,13 +328,6 @@ main {
   /* Menu Overlay for Mobile */
   .menu-overlay {
     display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
     opacity: 0;
     animation: fadeIn 0.3s ease forwards;
   }
@@ -360,7 +370,7 @@ main {
   }
 
   .menu {
-    padding: 20px 0;
+    padding: 70px 0 20px;
   }
 
   .menu-list {
@@ -401,7 +411,8 @@ main {
 
 /* Focus Styles for Keyboard Navigation */
 .menu-link:focus,
-.social-link:focus {
+.social-link:focus,
+.menu-toggle:focus {
   outline: 2px solid #007bff;
   outline-offset: 2px;
 }

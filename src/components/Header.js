@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './css/Header.css';
 import logo from '../img/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -23,13 +25,31 @@ const Header = () => {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.header')) {
+      // Don't close if clicking the toggle button itself
+      if (toggleRef.current && toggleRef.current.contains(event.target)) {
+        return;
+      }
+      
+      // Close if menu is open and click is outside menu and header
+      if (isMenuOpen && 
+          menuRef.current && 
+          !menuRef.current.contains(event.target) && 
+          !event.target.closest('.menu-toggle')) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Add body class to prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open-body');
+    } else {
+      document.body.classList.remove('menu-open-body');
+    }
   }, [isMenuOpen]);
 
   return (
@@ -42,7 +62,7 @@ const Header = () => {
         </div>
 
         <div className="header-nav">
-          <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`}>
+          <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`} ref={menuRef}>
             <ul className="menu-list">
               <li className="menu-item">
                 <Link 
@@ -124,10 +144,12 @@ const Header = () => {
             </div>
 
             <button 
+              ref={toggleRef}
               className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
               onClick={toggleMenu}
               aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               <span className="menu-toggle-bar"></span>
               <span className="menu-toggle-bar"></span>
