@@ -11,7 +11,8 @@
 
 .services-title {
   font-size: clamp(32px, 4vw, 48px);
-  background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+  background: linear-gradient(135deg, #000000ff 0%, #475569 100%);
+  color: #1e293b;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -85,7 +86,7 @@
 
 .service-title {
   font-size: 24px;
-  color: #1e293b;
+  color: #000000ff;
   margin-bottom: 15px;
   font-weight: 600;
   text-align: center;
