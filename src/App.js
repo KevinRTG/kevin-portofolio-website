@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
+import ScrollToTop from './ScrollToTop';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
@@ -59,9 +60,10 @@ class ErrorBoundary extends React.Component {
 }
 
 const App = () => {
-  return (
+  return ( 
     <ErrorBoundary>
       <Router>
+       <ScrollToTop />
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Header />
           <main style={{ flex: 1 }}>
