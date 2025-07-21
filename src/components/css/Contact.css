@@ -301,6 +301,16 @@
     gap: 30px;
   }
 
+  .form-input,
+  .form-textarea {
+    width: 91%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
   .contact-info-section,
   .contact-form-section,
   .social-section,
@@ -323,6 +333,17 @@
   .social-section,
   .location-section {
     padding: 20px 15px;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 89%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
   }
 
   .social-grid {
