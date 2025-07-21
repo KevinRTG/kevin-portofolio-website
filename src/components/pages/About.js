@@ -41,9 +41,7 @@ const About = () => {
             <p>
               Hello! I am Kevin Suyadi Ritonga, a Computer Engineering student at Pelita Bangsa University
               with a passion for UI/UX Design and Front-End Development. I enjoy creating
-              engaging and functional digital experiences.
-            </p>
-            <p>
+              engaging and functional digital experiences. 
               My journey in the world of technology began with an interest in web design and development.
               I continue to learn and hone my skills in creating user-friendly and responsive interfaces using modern technology.
             </p>

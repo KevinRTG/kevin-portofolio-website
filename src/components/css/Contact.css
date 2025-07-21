@@ -242,23 +242,30 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+/* Updated Social Links Styling */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+  margin-top: 10px;
 }
 
 .social-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 20px;
   background: #f8fafc;
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  min-width: 120px;
+  flex: 0 0 auto;
 }
 
 .social-card:hover {
@@ -270,12 +277,25 @@
 
 .social-icon {
   font-size: 32px;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+  color: #0056b3;
+  transform: scale(1.1);
 }
 
 .social-name {
   color: #1e293b;
   font-weight: 500;
   font-size: 14px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.social-card:hover .social-name {
+  color: #007bff;
 }
 
 .map-container {
@@ -310,7 +330,8 @@
     font-size: 16px;
     transition: all 0.3s ease;
     background: #f8fafc;
-}
+  }
+  
   .contact-info-section,
   .contact-form-section,
   .social-section,
@@ -318,8 +339,27 @@
     padding: 30px 20px;
   }
 
-  .social-grid {
-    grid-template-columns: repeat(3, 1fr);
+  /* Mobile Social Links */
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .social-card {
+    min-width: 100px;
+    padding: 20px 16px;
+    flex: 0 0 calc(50% - 7.5px);
+    max-width: 140px;
+  }
+
+  .social-icon {
+    font-size: 28px;
+  }
+
+  .social-name {
+    font-size: 13px;
   }
 }
 
@@ -346,11 +386,48 @@
     background: #f8fafc;
   }
 
-  .social-grid {
-    grid-template-columns: 1fr;
+  /* Small Mobile Social Links */
+  .social-links {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .social-card {
+    flex: 0 0 calc(50% - 6px);
+    min-width: 90px;
+    max-width: 120px;
+    padding: 18px 12px;
+  }
+
+  .social-icon {
+    font-size: 24px;
+  }
+
+  .social-name {
+    font-size: 12px;
   }
 
   .contact-info-card {
     padding: 15px;
+  }
+}
+
+/* Large Desktop Optimization */
+@media (min-width: 1200px) {
+  .social-links {
+    gap: 25px;
+  }
+
+  .social-card {
+    min-width: 140px;
+    padding: 28px 24px;
+  }
+
+  .social-icon {
+    font-size: 36px;
+  }
+
+  .social-name {
+    font-size: 15px;
   }
 }

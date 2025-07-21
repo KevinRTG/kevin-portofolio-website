@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/Contact.css';
+import * as FaIcons from 'react-icons/fa';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -41,7 +42,6 @@ function Contact() {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       
-      const data = await res.json();
       setStatus('Message sent successfully! Thank you.');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
@@ -60,10 +60,19 @@ function Contact() {
   ];
 
   const socialLinks = [
-    { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: '🎥' },
-    { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: '💻' },
-    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: '📷' }
+    { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: 'youtube' },
+    { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: 'github' },
+    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: 'instagram' }
   ];
+
+  const getSocialIcon = (iconName) => {
+    const iconMap = {
+      youtube: FaIcons.FaYoutube,
+      github: FaIcons.FaGithub,
+      instagram: FaIcons.FaInstagram,
+    };
+    return iconMap[iconName] || null;
+  };
 
   return (
     <section className="contact">
@@ -149,19 +158,16 @@ function Contact() {
         <div className="contact-additional">
           <div className="social-section">
             <h3 className="section-title">Find Me On</h3>
-            <div className="social-grid">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-card"
-                >
-                  <div className="social-icon">{social.icon}</div>
-                  <span className="social-name">{social.name}</span>
-                </a>
-              ))}
+            <div className="social-links">
+              {socialLinks.map((link, index) => {
+                const IconComponent = getSocialIcon(link.icon);
+                return (
+                  <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="social-card">
+                    {IconComponent && <IconComponent className="social-icon" />}
+                    <span className="social-name">{link.name}</span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 

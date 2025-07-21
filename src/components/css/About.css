@@ -34,7 +34,7 @@
 }
 
 .about-intro p {
-  font-size: 16px;
+  font-size: 18px;
   color: #64748b;
   line-height: 1.8;
   margin-bottom: 20px;
@@ -207,6 +207,7 @@
 }
 
 .education-details p {
+  font-size: 16px;
   margin: 10px 0;
   color: #64748b;
   line-height: 1.6;
