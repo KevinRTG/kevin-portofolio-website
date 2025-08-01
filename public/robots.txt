@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://kevinritonga.my.id/sitemap.xml
-
