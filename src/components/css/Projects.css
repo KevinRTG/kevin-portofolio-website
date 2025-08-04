@@ -58,16 +58,34 @@
     font-size: 1rem;
     color: #555;
     margin-bottom: 20px;
+     text-align: left;
   }
 
   .projects-description {
     text-align: center;
   }
   
-  
+  .project-technologies {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  gap:  8px;
+}
+
+.tech-badge {
+  background-color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
   .project-link {
     display: inline-block;
     padding: 10px 20px;
+    margin-top: 20px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
