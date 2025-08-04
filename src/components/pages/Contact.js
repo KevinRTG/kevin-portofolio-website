@@ -53,7 +53,7 @@ function Contact() {
   };
 
   const contactInfo = [
-    { label: 'Nama', value: 'Kevin Suyadi Ritonga', icon: '👤' },
+    { label: 'Name', value: 'Kevin Suyadi Ritonga', icon: '👤' },
     { label: 'Email', value: 'kevinsuyadi2017@gmail.com', link: 'mailto:kevinsuyadi2017@gmail.com', icon: '📧' },
     { label: 'WhatsApp', value: '+62 856-9329-5680', link: 'https://wa.link/uve1tb', icon: '📱' },
     { label: 'Alamat', value: 'Jl. Kenanga 1 No. 18 Blok D 21, Wanasari, Cibitung, Jawa Barat, Indonesia', icon: '📍' }

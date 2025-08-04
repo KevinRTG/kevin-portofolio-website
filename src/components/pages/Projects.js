@@ -8,7 +8,7 @@ function Projects() {
       description: "I created and implemented this company profile website project to offer to a specific company that needed a simple and easy-to-use Company Profile. This website was built using the Next.js framework.",
       image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/preview.png?raw=true",
       link: "https://solusidigital.my.id/",
-      technologies: ["Nodemailer", "React", "CSS", "JavaScript"],
+      technologies: ["Next.js","Nodemailer", "Prisma", "Tailwind CSS", "TypeScript"],
     },
 
     {
@@ -16,7 +16,7 @@ function Projects() {
       description: "I created this congregation app project to be implemented in church organizations, which allows congregations to register through this web-based Jemaat App.",
       image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/jemaatapppreview.png?raw=true",
       link: "https://sistem-pengelola-data-jemaat.vercel.app/",
-      technologies: ["Nodemailer", "React", "CSS", "JavaScript"],
+      technologies: ["Next.js", "Nodemailer", "React", "Prisma", "Tailwind CSS", "TypeScript"],
     },
 
 
