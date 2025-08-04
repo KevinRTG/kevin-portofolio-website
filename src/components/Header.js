@@ -141,6 +141,15 @@ const Header = () => {
               >
                 <i className="fab fa-instagram"></i>
               </a>
+              <a 
+                href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+                aria-label="Linkedin Profile"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
             </div>
 
             <button 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/Footer.css';
-import { FaYoutube, FaGithub, FaInstagram, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaYoutube, FaGithub, FaInstagram, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -21,6 +21,9 @@ const Footer = () => {
         </a>
         <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer">
           <FaInstagram /> Instagram
+        </a>
+         <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin /> Linkedin
         </a>
       </div>
     </footer>

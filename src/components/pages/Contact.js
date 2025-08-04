@@ -62,7 +62,8 @@ function Contact() {
   const socialLinks = [
     { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: 'youtube' },
     { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: 'github' },
-    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: 'instagram' }
+    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: 'instagram' },
+    { name: 'Linkedin', url: 'https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292', icon: 'linkedin' }
   ];
 
   const getSocialIcon = (iconName) => {
@@ -70,6 +71,7 @@ function Contact() {
       youtube: FaIcons.FaYoutube,
       github: FaIcons.FaGithub,
       instagram: FaIcons.FaInstagram,
+      linkedin: FaIcons.FaLinkedin
     };
     return iconMap[iconName] || null;
   };

@@ -39,29 +39,22 @@
   line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .about-intro p:hover {
+  background: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .about-section {
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.about-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .section-title {
@@ -193,10 +186,17 @@
 
 /* Education Card */
 .education-card {
-  background: #f8fafc;
   padding: 30px;
+  background: #f8fafc;
   border-radius: 12px;
-  border-left: 5px solid #007bff;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.education-card:hover {
+  background: rgba(0, 123, 255, 0.05);
+  border-left-color: #007bff;
+  transform: translateX(5px);
 }
 
 .education-title {
@@ -215,14 +215,17 @@
 
 /* Goal Text */
 .goal-text {
-  font-size: 16px;
-  color: #64748b;
-  line-height: 1.8;
-  text-align: justify;
-  background: #f8fafc;
   padding: 30px;
+  background: #f8fafc;
   border-radius: 12px;
-  border-left: 5px solid #007bff;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.goal-text:hover {
+  background: rgba(0, 123, 255, 0.05);
+  border-left-color: #007bff;
+  transform: translateX(5px);
 }
 
 /* Responsive Design */
