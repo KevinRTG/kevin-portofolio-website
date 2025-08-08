@@ -11,7 +11,8 @@ const Footer = () => {
       </div>
             
       <div className="footer-info">
-        <p><FaEnvelope /> kevinsuyadi2017@gmail.com</p>
+        <a href="mailto:kevinsuyadi2017@gmail.com"> 
+        <FaEnvelope /> kevinsuyadi2017@gmail.com</a>
         <p><FaMapMarkerAlt /> Cibitung, Jawa Barat, Indonesia</p>
       </div>
 
@@ -33,7 +34,11 @@ const Footer = () => {
           <FaLinkedin /> Linkedin
         </a>
       </div>
-      <p>&copy; 2025 Portfolio. All Rights Reserved.</p>
+
+      <div className="footer-copyright">
+      <p>&copy; 2025 Kevin Ritonga. All Rights Reserved.</p>
+      </div>
+
     </footer>
   );
 };
