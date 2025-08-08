@@ -5,11 +5,18 @@ import { FaYoutube, FaGithub, FaInstagram, FaLinkedin, FaEnvelope, FaMapMarkerAl
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>&copy; 2025 Portfolio. All Rights Reserved.</p>
 
+      <div className="footer-contact">
+        <h2> Contact</h2>
+      </div>
+            
       <div className="footer-info">
         <p><FaEnvelope /> kevinsuyadi2017@gmail.com</p>
         <p><FaMapMarkerAlt /> Cibitung, Jawa Barat, Indonesia</p>
+      </div>
+
+      <div className="footer-social">
+        <h2> Social</h2>
       </div>
 
       <div className="social-links">
@@ -26,6 +33,7 @@ const Footer = () => {
           <FaLinkedin /> Linkedin
         </a>
       </div>
+      <p>&copy; 2025 Portfolio. All Rights Reserved.</p>
     </footer>
   );
 };
