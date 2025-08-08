@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useInView from '../../useInView';
 import '../css/About.css';
 
 const About = () => {
+  const aboutRef = useRef(null);
+  const isVisible = useInView(aboutRef);
+
   const skills = [
     { name: "HTML & CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -29,7 +33,10 @@ const About = () => {
   ];
 
   return (
-    <section className="about">
+    <section
+      ref={aboutRef}
+      className={`about ${isVisible ? 'fade-in' : 'fade-init'}`}
+    >
       <div className="about-container">
         <h2 className="about-title">About Me</h2>
         <p className="about-description">

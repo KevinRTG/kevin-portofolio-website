@@ -1,8 +1,23 @@
 /* About Section */
 .about {
   padding: 80px 40px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
+
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.02);
+  animation: fadeInEffect 1.2s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
 
 .about-container {
   max-width: 1200px;
@@ -39,7 +54,6 @@
   line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   padding: 30px;
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -52,7 +66,6 @@
 }
 
 .about-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   padding: 40px;
   border-radius: 16px;
 }
@@ -90,10 +103,9 @@
   align-items: center;
   gap: 15px;
   padding: 20px;
-  background: #f8fafc;
   border-radius: 12px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 123, 255, 0.1);
+  border: 0px solid rgba(0, 123, 255, 0.1);
 }
 
 .skill-card:hover {
@@ -161,7 +173,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: #f8fafc;
   border-radius: 12px;
   transition: all 0.3s ease;
   width: 80px;
@@ -169,7 +180,7 @@
 }
 
 .tool-card:hover {
-  background: rgba(0, 123, 255, 0.05);
+  background: rgba(253, 253, 253, 1);
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
 }
@@ -187,14 +198,13 @@
 /* Education Card */
 .education-card {
   padding: 30px;
-  background: #f8fafc;
   border-radius: 12px;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
 }
 
 .education-card:hover {
-  background: rgba(0, 123, 255, 0.05);
+  background: rgba(255, 255, 255, 1);
   border-left-color: #007bff;
   transform: translateX(5px);
 }
@@ -223,10 +233,11 @@
 }
 
 .goal-text:hover {
-  background: rgba(0, 123, 255, 0.05);
+  background: rgba(255, 255, 255, 1);
   border-left-color: #007bff;
   transform: translateX(5px);
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

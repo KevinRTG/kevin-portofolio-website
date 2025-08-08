@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useInView from '../../useInView';
 import '../css/Services.css';
 
 const Services = () => {
+  const servicesRef = useRef(null);
+  const isVisible = useInView(servicesRef, 0.3); 
+
   const services = [
     {
       id: 1,
@@ -27,7 +31,11 @@ const Services = () => {
   ];
 
   return (
-    <section className="services">
+      <section
+      id="services"
+      ref={servicesRef}
+      className={`services ${isVisible ? 'fade-in' : 'fade-init'}`}
+    >
       <div className="services-container">
         <h2 className="services-title">My Services</h2>
         <p className="services-description">

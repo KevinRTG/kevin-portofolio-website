@@ -1,21 +1,35 @@
 /* Home Section */
 .home {
   padding: 80px 40px;
-  background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
+  transition: all 1s ease-out;
+}
+
+.fade-init {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.02);
+}
+
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.02);
+  animation: fadeInEffect 1.2s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }
 
 .home-container {
   max-width: 1500px;
   margin: 0 auto;
-  background: #fff;
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.home-container:hover {
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
-  transform: translateY(-5px);
 }
 
 .home-content {
@@ -130,6 +144,9 @@
   transform: scale(1.05) rotate(2deg);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
+
+
+
 
 /* Animations */
 @keyframes fadeInUp {

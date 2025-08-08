@@ -1,4 +1,5 @@
 import React from 'react';
+import StarBackground from './components/StarBackground';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import ScrollToTop from './ScrollToTop';
@@ -62,6 +63,7 @@ class ErrorBoundary extends React.Component {
 const App = () => {
   return ( 
     <ErrorBoundary>
+     <StarBackground />
       <Router>
        <ScrollToTop />
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>

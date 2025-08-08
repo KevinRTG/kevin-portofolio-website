@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useInView from '../../useInView';
 import '../css/Projects.css';
 
 function Projects() {
+  const projectsRef = useRef(null);
+  const isVisible = useInView(projectsRef, 0.3); 
+
   const projects = [
     {
       title: "Company Profile",
@@ -10,7 +14,6 @@ function Projects() {
       link: "https://solusidigital.my.id/",
       technologies: ["Next.js","Nodemailer", "Prisma", "Tailwind CSS", "TypeScript"],
     },
-
     {
       title: "Jemaat App",
       description: "I created this congregation app project to be implemented in church organizations, which allows congregations to register through this web-based Jemaat App.",
@@ -18,16 +21,17 @@ function Projects() {
       link: "https://sistem-pengelola-data-jemaat.vercel.app/",
       technologies: ["Next.js", "Nodemailer", "React", "Prisma", "Tailwind CSS", "TypeScript"],
     },
-
-
-
   ];
 
   return (
-    <section id="projects" className="projects">
+    <section
+      id="projects"
+      ref={projectsRef}
+      className={`projects ${isVisible ? 'fade-in' : 'fade-init'}`}
+    >
       <h2 className="projects-title">Projects</h2>
       <p className="projects-description">
-       Explore the best projects that I have worked on
+        Explore the best projects that I have worked on
       </p>
       <div className="projects-grid">
         {projects.map((project, index) => (
@@ -47,9 +51,7 @@ function Projects() {
                   </span>
                 ))}
               </div>
-
               <a href={project.link} className="project-link">
-
                 View Projects
               </a>
             </div>

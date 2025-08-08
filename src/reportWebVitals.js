@@ -1,4 +1,4 @@
-import { getCLS, getFID, getLCP } from 'web-vitals';
+//import { getCLS, getFID, getLCP } from 'web-vitals';
 
 const reportWebVitals = onPerfEntry => {
   if (onPerfEntry && onPerfEntry instanceof Function) {

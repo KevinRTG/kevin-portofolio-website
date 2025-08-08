@@ -1,9 +1,24 @@
 .projects {
    padding: 80px 20px;
-   background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
    min-height: 100vh;
    text-align: center;
+   transition: all 1s ease-out;
   }
+
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.02);
+  animation: fadeInEffect 1.2s ease-out forwards;
+}
+
+@keyframes fadeInEffect {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
   
   .projects-title {
     font-size: clamp(32px, 4vw, 48px);
