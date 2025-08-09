@@ -13,6 +13,15 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Fungsi untuk kembali ke atas halaman
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    closeMenu(); // Menutup menu setelah kembali ke atas
+  };
+
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
@@ -55,7 +64,8 @@ const Header = () => {
     <nav className={`header ${!isScrolled ? 'transparent' : ''}`}>
       <div className="header-content">
         <div className="logo-container">
-          <Link to="/" className="logo" onClick={closeMenu}>
+          {/* Mengganti Link dengan div dan menambahkan onClick */}
+          <Link to="/" className="logo" onClick={scrollToTop}>
             <img src={logo} alt="Kevin Suyadi Ritonga Logo" className="logo-image" />
           </Link>
         </div>
@@ -92,7 +102,6 @@ const Header = () => {
               <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
             </div>
 
-            {/* Tombol menu hamburger akan muncul hanya saat halaman digulir */}
             {isScrolled && (
               <button
                 ref={toggleRef}

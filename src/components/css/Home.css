@@ -1,20 +1,21 @@
 /* Home Section */
 .home {
-  padding: 80px 40px;
-  transition: all 1s ease-out;
+  padding: 80px 20px;
+  min-height: 80vh;
+  transition: all 0.5s ease-out;
 }
 
+/* Transition home */
 .fade-init {
   opacity: 0;
   filter: blur(10px);
-  transform: scale(1.02);
 }
 
 .fade-in {
   opacity: 0;
   filter: blur(10px);
   transform: scale(1.02);
-  animation: fadeInEffect 1.2s ease-out forwards;
+  animation: fadeInEffect 0.5s ease-out forwards;
 }
 
 @keyframes fadeInEffect {
@@ -179,7 +180,7 @@
 
   .home-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 5px;
     padding: 60px 40px;
     text-align: center;
   }
