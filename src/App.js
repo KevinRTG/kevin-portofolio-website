@@ -1,5 +1,5 @@
 import React from 'react';
-import StarBackground from './components/StarBackground';
+import StarBackground from './components/pages/StarBackground';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import ScrollToTop from './ScrollToTop';

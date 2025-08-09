@@ -4,8 +4,8 @@ import './css/Header.css';
 import logo from '../img/logo.png';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
   const location = useLocation();
@@ -19,19 +19,21 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (toggleRef.current?.contains(event.target)) return;
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        !event.target.closest('.menu-toggle')
-      ) {
+      if (toggleRef.current && toggleRef.current.contains(event.target)) {
+        return;
+      }
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // initial check
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -62,18 +64,18 @@ const Header = () => {
           <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`} ref={menuRef}>
             <ul className="menu-list">
               <li className="menu-item">
-                <Link 
-                  to="/" 
-                  className={`menu-link ${location.pathname === "/" ? "active" : ""}`} 
+                <Link
+                  to="/"
+                  className={`menu-link ${location.pathname === "/" ? "active" : ""}`}
                   onClick={closeMenu}
                 >
                   Home
                 </Link>
               </li>
               <li className="menu-item">
-                <Link 
-                  to="/contact" 
-                  className={`menu-link ${location.pathname === "/contact" ? "active" : ""}`} 
+                <Link
+                  to="/contact"
+                  className={`menu-link ${location.pathname === "/contact" ? "active" : ""}`}
                   onClick={closeMenu}
                 >
                   Contact
@@ -84,25 +86,27 @@ const Header = () => {
 
           <div className="header-actions">
             <div className="social-icons">
-              {/* Social links */}
               <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube Channel"><i className="fab fa-youtube"></i></a>
               <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub Profile"><i className="fab fa-github"></i></a>
               <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram Profile"><i className="fab fa-instagram"></i></a>
               <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
             </div>
 
-            <button 
-              ref={toggleRef}
-              className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
-              onClick={toggleMenu}
-              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <span className="menu-toggle-bar"></span>
-              <span className="menu-toggle-bar"></span>
-              <span className="menu-toggle-bar"></span>
-            </button>
+            {/* Tombol menu hamburger akan muncul hanya saat halaman digulir */}
+            {isScrolled && (
+              <button
+                ref={toggleRef}
+                className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
+                onClick={toggleMenu}
+                aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                <span className="menu-toggle-bar"></span>
+                <span className="menu-toggle-bar"></span>
+                <span className="menu-toggle-bar"></span>
+              </button>
+            )}
           </div>
         </div>
       </div>

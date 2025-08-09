@@ -29,7 +29,7 @@ const StarBackground = () => {
           },
           move: {
             enable: true,
-            speed: 1.2,
+            speed: 1.0,
             direction: "bottom",
             random: true,
             outModes: { default: "out" },
