@@ -1,8 +1,6 @@
 /* About Section */
 .about {
   padding: 80px 40px;
-  min-height: 80vh;
-  transition: all 1s ease-out;
 }
 
 .fade-in {
