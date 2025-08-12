@@ -6,6 +6,7 @@ import '../css/About.css';
 import '../css/Service.css';
 import '../css/Projects.css';
 import '../css/Contact.css';
+import About from './About';
 import * as FaIcons from 'react-icons/fa';
 
 const Home = () => {
