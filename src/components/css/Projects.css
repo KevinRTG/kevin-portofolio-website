@@ -1,7 +1,7 @@
 .projects {
    padding: 80px 20px;
    background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
-   min-height: 100vh;
+   min-height: 50vh;
    text-align: center;
    transition: all 1s ease-out;
   }
