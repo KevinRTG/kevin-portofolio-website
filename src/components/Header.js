@@ -19,9 +19,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (toggleRef.current && toggleRef.current.contains(event.target)) {
-        return;
-      }
+      if (toggleRef.current && toggleRef.current.contains(event.target)) return;
       if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
@@ -29,7 +27,6 @@ const Header = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
@@ -40,14 +37,10 @@ const Header = () => {
     document.body.classList.toggle('menu-open-body', isMenuOpen);
   }, [isMenuOpen]);
 
-  // Detect scroll position
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -74,6 +67,15 @@ const Header = () => {
               </li>
               <li className="menu-item">
                 <Link
+                  to="/about"
+                  className={`menu-link ${location.pathname === "/about" ? "active" : ""}`}
+                  onClick={closeMenu}
+                >
+                  About
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link
                   to="/contact"
                   className={`menu-link ${location.pathname === "/contact" ? "active" : ""}`}
                   onClick={closeMenu}
@@ -92,7 +94,6 @@ const Header = () => {
               <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
             </div>
 
-            {/* Tombol menu hamburger akan muncul hanya saat halaman digulir */}
             {isScrolled && (
               <button
                 ref={toggleRef}

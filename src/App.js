@@ -6,7 +6,7 @@ import ScrollToTop from './ScrollToTop';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
-import Services from './components/pages/Services';
+import Service from './components/pages/Service';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
 
@@ -73,7 +73,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/services" element={<Services />} />
+              <Route path="/service" element={<Service />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

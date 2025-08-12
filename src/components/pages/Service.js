@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import useInView from '../../useInView';
-import '../css/Services.css';
+import '../css/Service.css';
 
-const Services = () => {
-  const servicesRef = useRef(null);
-  const isVisible = useInView(servicesRef, 0.3); 
+const Service = () => {
+  const serviceRef = useRef(null);
+  const isVisible = useInView(serviceRef, 0.3); 
 
-  const services = [
+  const service = [
     {
       id: 1,
       title: "UI/UX Design",
@@ -32,18 +32,18 @@ const Services = () => {
 
   return (
       <section
-      id="services"
-      ref={servicesRef}
-      className={`services ${isVisible ? 'fade-in' : 'fade-init'}`}
+      id="service"
+      ref={serviceRef}
+      className={`service ${isVisible ? 'fade-in' : 'fade-init'}`}
     >
-      <div className="services-container">
-        <h2 className="services-title">My Services</h2>
-        <p className="services-description">
-          The professional services I offer to help realize your digital vision
+      <div className="service-container">
+        <h2 className="service-title">My Service</h2>
+        <p className="service-description">
+          The professional service I offer to help realize your digital vision
         </p>
         
-        <div className="services-grid">
-          {services.map(service => (
+        <div className="service-grid">
+          {service.map(service => (
             <div key={service.id} className="service-card">
               <div className="service-icon">{service.icon}</div>
               <h3 className="service-title">{service.title}</h3>
@@ -61,4 +61,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Service;
