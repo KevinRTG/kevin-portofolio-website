@@ -66,7 +66,7 @@ const App = () => {
      <StarBackground />
       <Router>
        <ScrollToTop />
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '50vh' }}>
           <Header />
           <main style={{ flex: 1 }}>
             <Routes>
