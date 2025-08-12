@@ -6,6 +6,7 @@ html {
 .home {
   padding: 80px 40px;
   transition: all 1s ease-out;
+  min-height: 50vh;
 }
 
 .fade-init {
