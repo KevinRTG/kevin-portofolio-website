@@ -70,10 +70,10 @@ const About = () => {
           <div className="about-section">
             <h3 className="section-title">What I Do</h3>
             <div className="services-grid">
-              {services.map((service, index) => (
-                <div key={index} className="service-item">
-                  <span className="service-bullet">•</span>
-                  <span>{service}</span>
+              {services.map((services, index) => (
+                <div key={index} className="services-item">
+                  <span className="services-bullet">•</span>
+                  <span>{services}</span>
                 </div>
               ))}
             </div>

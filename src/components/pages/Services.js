@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import useInView from '../../useInView';
-import '../css/Service.css';
+import '../css/Services.css';
 
-const Service = () => {
-  const serviceRef = useRef(null);
-  const isVisible = useInView(serviceRef, 0.3); 
+const Services = () => {
+  const servicesRef = useRef(null);
+  const isVisible = useInView(servicesRef, 0.3); 
 
-  const service = [
+  const services = [
     {
       id: 1,
       title: "UI/UX Design",
@@ -32,24 +32,24 @@ const Service = () => {
 
   return (
       <section
-      id="service"
-      ref={serviceRef}
-      className={`service ${isVisible ? 'fade-in' : 'fade-init'}`}
+      id="services"
+      ref={servicesRef}
+      className={`services ${isVisible ? 'fade-in' : 'fade-init'}`}
     >
-      <div className="service-container">
-        <h2 className="service-title">My Service</h2>
-        <p className="service-description">
-          The professional service I offer to help realize your digital vision
+      <div className="services-container">
+        <h2 className="services-header">My Services</h2>
+        <p className="services-descriptions">
+          The professional services I offer to help realize your digital vision
         </p>
         
-        <div className="service-grid">
-          {service.map(service => (
-            <div key={service.id} className="service-card">
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-              <ul className="service-features">
-                {service.features.map((feature, index) => (
+        <div className="services-grid">
+          {services.map(services => (
+            <div key={services.id} className="services-card">
+              <div className="services-icon">{services.icon}</div>
+              <h3 className="services-title">{services.title}</h3>
+              <p className="services-description">{services.description}</p>
+              <ul className="services-features">
+                {services.features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
@@ -61,4 +61,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Services;

@@ -6,7 +6,7 @@ import ScrollToTop from './ScrollToTop';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
-import Service from './components/pages/Service';
+import Services from './components/pages/Services';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
 
@@ -66,14 +66,14 @@ const App = () => {
      <StarBackground />
       <Router>
        <ScrollToTop />
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '50vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Header />
           <main style={{ flex: 1 }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/service" element={<Service />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
