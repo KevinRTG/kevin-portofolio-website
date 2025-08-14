@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import './css/Header.css';
 import logo from '../img/logo.png';
 
@@ -8,14 +7,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
-  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,71 +38,79 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    closeMenu();
+  };
+
   return (
     <nav className={`header ${!isScrolled ? 'transparent' : ''}`}>
       <div className="header-content">
+        {/* Logo */}
         <div className="logo-container">
-          <Link to="/" className="logo" onClick={closeMenu}>
+          <a href="#home" className="logo" onClick={(e) => handleNavClick(e, '#home')}>
             <img src={logo} alt="Kevin Suyadi Ritonga Logo" className="logo-image" />
-          </Link>
+          </a>
         </div>
 
-        <div className="header-nav">
-          <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`} ref={menuRef}>
-            <ul className="menu-list">
-              <li className="menu-item">
-                <Link
-                  to="/"
-                  className={`menu-link ${location.pathname === "/" ? "active" : ""}`}
-                  onClick={closeMenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="menu-item">
-                <Link
-                  to="/about"
-                  className={`menu-link ${location.pathname === "/about" ? "active" : ""}`}
-                  onClick={closeMenu}
-                >
-                  About
-                </Link>
-              </li>
-              <li className="menu-item">
-                <Link
-                  to="/contact"
-                  className={`menu-link ${location.pathname === "/contact" ? "active" : ""}`}
-                  onClick={closeMenu}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
+        {/* Menu (tengah) */}
+        <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`} ref={menuRef}>
+          <ul className="menu-list">
+            <li className="menu-item">
+              <a href="#home" className="menu-link" onClick={(e) => handleNavClick(e, '#home')}>
+                Home
+              </a>
+            </li>
+            <li className="menu-item">
+              <a href="#about" className="menu-link" onClick={(e) => handleNavClick(e, '#about')}>
+                About
+              </a>
+            </li>
+            <li className="menu-item">
+              <a href="#services" className="menu-link" onClick={(e) => handleNavClick(e, '#services')}>
+                Services
+              </a>
+            </li>
+            <li className="menu-item">
+              <a href="#projects" className="menu-link" onClick={(e) => handleNavClick(e, '#projects')}>
+                Projects
+              </a>
+            </li>
+            <li className="menu-item">
+              <a href="#contact" className="menu-link" onClick={(e) => handleNavClick(e, '#contact')}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Social Icons (kanan) */}
+        <div className="header-actions">
+          <div className="social-icons">
+            <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube Channel"><i className="fab fa-youtube"></i></a>
+            <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub Profile"><i className="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram Profile"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
           </div>
 
-          <div className="header-actions">
-            <div className="social-icons">
-              <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube Channel"><i className="fab fa-youtube"></i></a>
-              <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub Profile"><i className="fab fa-github"></i></a>
-              <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram Profile"><i className="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
-            </div>
-
-            {isScrolled && (
-              <button
-                ref={toggleRef}
-                className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
-                onClick={toggleMenu}
-                aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                aria-expanded={isMenuOpen}
-                aria-controls="mobile-menu"
-              >
-                <span className="menu-toggle-bar"></span>
-                <span className="menu-toggle-bar"></span>
-                <span className="menu-toggle-bar"></span>
-              </button>
-            )}
-          </div>
+          {isScrolled && (
+            <button
+              ref={toggleRef}
+              className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span className="menu-toggle-bar"></span>
+              <span className="menu-toggle-bar"></span>
+              <span className="menu-toggle-bar"></span>
+            </button>
+          )}
         </div>
       </div>
 

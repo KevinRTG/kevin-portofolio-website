@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import useInView from '../../useInView';
 import '../css/About.css';
+import { FiArrowUpRight } from 'react-icons/fi'; // untuk ikon panah
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -113,6 +114,17 @@ const About = () => {
               I aspire to become a professional Front-End Developer who not only writes clean code,
               but also understands user experience. I hope to work in a team that shares the same passion for building impactful digital products.
             </p>
+          </div>
+
+          {/* View Full Resume */}
+          <div className="about-section resume-download">
+            <a 
+              href="/Resume Kevin_Suyadi_Ritonga.pdf" // path ke file resume kamu di public folder
+              download
+              className="resume-link"
+            >
+              View Full Resume <FiArrowUpRight className="resume-icon" />
+            </a>
           </div>
         </div>
       </div>

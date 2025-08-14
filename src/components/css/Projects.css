@@ -10,7 +10,7 @@
   opacity: 0;
   filter: blur(10px);
   transform: scale(1.02);
-  animation: fadeInEffect 1.2s ease-out forwards;
+  animation: fadeInEffect 0.5s ease-out forwards;
 }
 
 @keyframes fadeInEffect {

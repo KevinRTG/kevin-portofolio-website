@@ -1,19 +1,21 @@
 import React, { useRef } from 'react';
-import kevinPhoto from '../../img/kevin_photo.png';
+import kevinPhoto from '../../img/kevin_photo.jpg';
 import useInView from '../../useInView';
 import '../css/Home.css';
 import About from './About';
 import Services from './Services';
 import Projects from './Projects';
+import Contact from './Contact';
 
 const Home = () => {
   const homeRef = useRef(null);
-  const isVisible = useInView(homeRef, 0.3); // Adjust threshold as needed
+  const isVisible = useInView(homeRef, 0.3); // threshold 0.3
 
   return (
     <>
       {/* Hero Section */}
       <section
+        id="home"
         ref={homeRef}
         className={`home ${isVisible ? 'fade-in' : 'fade-init'}`}
       >
@@ -45,7 +47,7 @@ const Home = () => {
         <About />
       </section>
 
-      {/* Service Section */}
+      {/* Services Section */}
       <section id="services">
         <Services />
       </section>
@@ -53,6 +55,11 @@ const Home = () => {
       {/* Projects Section */}
       <section id="projects">
         <Projects />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <Contact />
       </section>
     </>
   );

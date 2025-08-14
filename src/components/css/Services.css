@@ -2,14 +2,14 @@
   padding: 80px 20px;
   background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
   min-height: 50vh;
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .fade-in {
   opacity: 0;
   filter: blur(10px);
   transform: scale(1.02);
-  animation: fadeInEffect 1.2s ease-out forwards;
+  animation: fadeInEffect 0.5s ease-out forwards;
 }
 
 @keyframes fadeInEffect {

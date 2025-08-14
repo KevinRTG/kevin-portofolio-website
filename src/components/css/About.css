@@ -8,7 +8,7 @@
   opacity: 0;
   filter: blur(10px);
   transform: scale(1.02);
-  animation: fadeInEffect 1.2s ease-out forwards;
+  animation: fadeInEffect 0.5s ease-out forwards;
 }
 
 @keyframes fadeInEffect {
@@ -239,6 +239,34 @@
   background: rgba(255, 255, 255, 1);
   border-left-color: #007bff;
   transform: translateX(5px);
+}
+
+/* Resume */
+.resume-download {
+  margin-top: 30px;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: #1e293b; /* sesuaikan dengan tema */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resume-link:hover {
+  color: #007bff;
+}
+
+.resume-icon {
+  margin-left: 6px;
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.resume-link:hover .resume-icon {
+  transform: translateY(-2px) translateX(2px);
 }
 
 

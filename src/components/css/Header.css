@@ -1,3 +1,8 @@
+/* Smooth scrolling untuk seluruh halaman */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Base Layout */
 body {
   margin: 0;
@@ -24,12 +29,10 @@ main {
 }
 
 .header.transparent {
-  background-color: transparent;
-  box-shadow: none;
   background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
   backdrop-filter: blur(10px);
 }
-
 
 .header:hover {
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
@@ -37,8 +40,8 @@ main {
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 50px;
   max-width: 1400px;
   margin: 0 auto;
@@ -60,24 +63,19 @@ main {
 .logo-image {
   width: 50px;
   height: auto;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 .logo-image:hover {
   transform: scale(1.1) rotate(3deg);
 }
 
-/* Header Navigation */
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 250px;
-}
-
-/* Desktop Menu */
+/* Navigation di tengah */
 .menu {
+  flex: 1;
   display: flex;
+  justify-content: center;
 }
 
 .menu-list {
@@ -99,8 +97,7 @@ main {
   font-size: 16px;
   padding: 12px 20px;
   border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  transition: all 0.3s ease;
   display: block;
 }
 
@@ -112,31 +109,30 @@ main {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, #007bff, #0056b3);
-  transition: all 0.3s ease;
   transform: translateX(-50%);
+  transition: all 0.3s ease;
 }
 
 .menu-link:hover {
   color: #007bff;
   background-color: rgba(0, 123, 255, 0.05);
-  transform: translateY(-2px);
 }
 
 .menu-link:hover::before {
   width: 80%;
 }
 
+/* Active link untuk landing page */
 .menu-link.active {
   color: #007bff;
   background-color: rgba(0, 123, 255, 0.1);
-  font-weight: 600;
 }
 
 .menu-link.active::before {
   width: 80%;
 }
 
-/* Header Actions */
+/* Header Actions (kanan) */
 .header-actions {
   display: flex;
   align-items: center;
@@ -154,14 +150,18 @@ main {
   font-size: 20px;
   padding: 10px;
   border-radius: 50%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  text-decoration: none;
+  transition: all 0.3s ease;
+  text-decoration: none; /* Hilangkan garis bawah */
+}
+
+.social-link::before {
+  display: none; /* Pastikan tidak ada pseudo-element garis bawah */
 }
 
 .social-link:hover {
@@ -170,15 +170,13 @@ main {
   transform: translateY(-3px) scale(1.1);
 }
 
-/* Menu Toggle Button */
+/* Burger menu */
 .menu-toggle {
   display: none;
   background: none;
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
   width: 44px;
   height: 44px;
   flex-direction: column;
@@ -187,19 +185,12 @@ main {
   gap: 4px;
   background-color: rgba(0, 123, 255, 0.1);
   border: 2px solid rgba(0, 123, 255, 0.2);
-  margin-left: 10px;
-  z-index: 1002; /* Ensure toggle is above menu */
+  z-index: 1002;
 }
 
 .menu-toggle:hover {
   background-color: rgba(0, 123, 255, 0.15);
   border-color: rgba(0, 123, 255, 0.3);
-  transform: scale(1.05);
-}
-
-.menu-toggle:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
 .menu-toggle-bar {
@@ -207,37 +198,32 @@ main {
   height: 2px;
   background-color: #007bff;
   border-radius: 1px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
+  transition: all 0.3s ease;
 }
 
-/* Menu Toggle Animation */
+/* Menu toggle animation */
 .menu-toggle-active .menu-toggle-bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
 .menu-toggle-active .menu-toggle-bar:nth-child(2) {
   opacity: 0;
-  transform: scaleX(0);
 }
 
 .menu-toggle-active .menu-toggle-bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Menu Overlay */
+/* Overlay */
 .menu-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
 
-/* Mobile Styles */
+/* Mobile */
 @media (max-width: 768px) {
   .header-content {
     padding: 15px 20px;
@@ -388,60 +374,5 @@ main {
   .menu-link {
     padding: 15px 20px;
     font-size: 15px;
-  }
-}
-
-/* Large Desktop Styles */
-@media (min-width: 1200px) {
-  .header-content {
-    padding: 25px 60px;
-  }
-
-  .menu-overlay {
-  pointer-events: auto;
-}
-
-  .menu.menu-open {
-  pointer-events: auto;
-}
-
-
-  .menu-list {
-    gap: 40px;
-  }
-
-  .social-icons {
-    gap: 20px;
-  }
-}
-
-/* Accessibility Improvements */
-@media (prefers-reduced-motion: reduce) {
-  .menu-toggle-bar,
-  .menu-link,
-  .social-link,
-  .logo-image,
-  .menu {
-    transition: none;
-  }
-}
-
-/* Focus Styles for Keyboard Navigation */
-.menu-link:focus,
-.social-link:focus,
-.menu-toggle:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  .header {
-    border-bottom: 2  px solid #000;
-  }
-  
-  .menu-link,
-  .social-link {
-    border: 1px solid currentColor;
   }
 }
