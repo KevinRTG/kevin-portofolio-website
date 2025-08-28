@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="footer-info">
         <a href="mailto:kevinsuyadi2017@gmail.com"> 
         <FaEnvelope /> kevinsuyadi2017@gmail.com</a>
-        <p><FaMapMarkerAlt /> Cibitung, Jawa Barat, Indonesia</p>
+        <p><FaMapMarkerAlt /> Based in Bekasi, Indonesian</p>
       </div>
 
       <div className="footer-social">

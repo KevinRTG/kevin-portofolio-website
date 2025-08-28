@@ -56,7 +56,7 @@ function Contact() {
     { label: 'Name', value: 'Kevin Suyadi Ritonga', icon: '👤' },
     { label: 'Email', value: 'kevinsuyadi2017@gmail.com', link: 'mailto:kevinsuyadi2017@gmail.com', icon: '📧' },
     { label: 'WhatsApp', value: '+62 856-9329-5680', link: 'https://wa.link/uve1tb', icon: '📱' },
-    { label: 'Alamat', value: 'Jl. Kenanga 1 No. 18 Blok D 21, Wanasari, Cibitung, Jawa Barat, Indonesia', icon: '📍' }
+    { label: 'Alamat', value: 'Based in Bekasi, Indonesian', icon: '📍' }
   ];
 
   const socialLinks = [
@@ -178,7 +178,7 @@ function Contact() {
             <div className="map-container">
               <iframe
                 title="Kevin's Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63458.418577138495!2d107.1036725!3d-6.2438009999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6985872cc8f43f%3A0x43159d6778f424ce!2sKec.%20Cibitung%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1752749095697!5m2!1sid!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126906.8251647539!2d106.970127!3d-6.284977499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d8546ad633d%3A0x79e8de8965402078!2sKota%20Bks%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1756394719437!5m2!1sid!2sid"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
