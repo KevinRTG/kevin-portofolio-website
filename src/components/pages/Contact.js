@@ -55,8 +55,7 @@ function Contact() {
   const contactInfo = [
     { label: 'Name', value: 'Kevin Suyadi Ritonga', icon: '👤' },
     { label: 'Email', value: 'kevinsuyadi2017@gmail.com', link: 'mailto:kevinsuyadi2017@gmail.com', icon: '📧' },
-    { label: 'WhatsApp', value: '+62 856-9329-5680', link: 'https://wa.link/uve1tb', icon: '📱' },
-    { label: 'Alamat', value: 'Based in Bekasi, Indonesian', icon: '📍' }
+    { label: 'Address', value: 'Based in Bekasi, Indonesian', icon: '📍' }
   ];
 
   const socialLinks = [
