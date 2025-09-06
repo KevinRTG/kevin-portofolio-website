@@ -1,10 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import useInView from '../../useInView';
 import '../css/Projects.css';
 
 function Projects() {
   const projectsRef = useRef(null);
   const isVisible = useInView(projectsRef, 0.3); 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   const projects = [
     {
@@ -15,9 +20,9 @@ function Projects() {
       technologies: ["Next.js","Nodemailer", "Prisma", "Tailwind CSS", "TypeScript"],
     },
     {
-      title: "Jemaat App",
-      description: "I created this congregation app project to be implemented in church organizations, which allows congregations to register through this web-based Jemaat App.",
-      image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/jemaatapppreview.png?raw=true",
+      title: "GKO Cibitung Website",
+      description: "I developed this church website for GKO Cibitung to support their mission of spreading the Gospel, nurturing faith, and serving the community with sincerity. The site includes features such as worship schedules, congregation registration, and church information, all designed to be accessible and user-friendly for members of the congregation.",
+      image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/websitegkocibitung.png?raw=true",
       link: "https://github.com/KevinRTG/jemaat-app",
       technologies: ["Next.js", "Nodemailer", "React", "Prisma", "Tailwind CSS", "TypeScript"],
     },
@@ -34,29 +39,42 @@ function Projects() {
         Explore the best projects that I have worked on
       </p>
       <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="project-image"
-            />
-            <div className="project-details">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-technologies">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="tech-badge">
-                    {tech}
-                  </span>
-                ))}
+        {projects.map((project, index) => {
+          const isExpanded = expandedIndex === index;
+          const shortDescription = project.description.slice(0, 120) + '...';
+
+          return (
+            <div className="project-card" key={index}>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-image"
+              />
+              <div className="project-details">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">
+                  {isExpanded ? project.description : shortDescription}
+                  <button
+                    className="read-more-button"
+                    onClick={() => toggleExpand(index)}
+                  >
+                    {isExpanded ? 'Show less' : 'Read more'}
+                  </button>
+                </p>
+                <div className="project-technologies">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="tech-badge">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a href={project.link} className="project-link">
+                  View Projects
+                </a>
               </div>
-              <a href={project.link} className="project-link">
-                View Projects
-              </a>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

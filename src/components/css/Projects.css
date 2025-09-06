@@ -86,6 +86,20 @@
   .projects-description {
     text-align: center;
   }
+
+  .read-more-button {
+  background: none;
+  border: none;
+  color: #0070f3;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 5px;
+  padding: 0;
+}
+  .read-more-button:hover {
+  text-decoration: underline;
+}
+
   
   .project-technologies {
   margin-top: 8px;
@@ -119,3 +133,64 @@
     background-color: #0056b3;
   }
   
+  @media (max-width: 768px) {
+  .projects {
+    padding: 60px 16px;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .tech-badge {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .project-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .read-more-button {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .projects-description {
+    font-size: 1rem;
+  }
+
+  .project-details {
+    padding: 16px;
+  }
+
+  .project-image {
+    height: 140px;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-badge {
+    font-size: 10px;
+  }
+
+  .project-link {
+    font-size: 0.85rem;
+  }
+}
