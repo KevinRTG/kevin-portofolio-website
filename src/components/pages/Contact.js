@@ -21,7 +21,7 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const validationError = validateForm();
     if (validationError) {
       setStatus(validationError);
@@ -30,18 +30,18 @@ function Contact() {
 
     setIsLoading(true);
     setStatus('Sending messages...');
-    
+
     try {
       const res = await fetch('https://kevin-backend-seven.vercel.app/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      
+
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-      
+
       setStatus('Message sent successfully! Thank you.');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
@@ -53,26 +53,21 @@ function Contact() {
   };
 
   const contactInfo = [
-    { label: 'Name', value: 'Kevin Suyadi Ritonga', icon: '👤' },
-    { label: 'Email', value: 'kevinsuyadi2017@gmail.com', link: 'mailto:kevinsuyadi2017@gmail.com', icon: '📧' },
-    { label: 'Address', value: 'Based in Bekasi, Indonesian', icon: '📍' }
+    { label: 'Name', value: 'Kevin Suyadi Ritonga', icon: <FaIcons.FaUser /> },
+    { label: 'Email', value: 'kevinsuyadi2017@gmail.com', link: 'mailto:kevinsuyadi2017@gmail.com', icon: <FaIcons.FaEnvelope /> },
+    { label: 'Address', value: 'Based in Bekasi, Indonesia', icon: <FaIcons.FaMapMarkerAlt /> }
   ];
 
   const socialLinks = [
-    { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: 'youtube' },
-    { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: 'github' },
-    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: 'instagram' },
-    { name: 'Linkedin', url: 'https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292', icon: 'linkedin' }
+    { name: 'YouTube', url: 'https://www.youtube.com/@kevindoots', icon: 'FaYoutube' },
+    { name: 'GitHub', url: 'https://github.com/KevinRTG', icon: 'FaGithub' },
+    { name: 'Instagram', url: 'https://www.instagram.com/kepin.sr/', icon: 'FaInstagram' },
+    { name: 'Linkedin', url: 'https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292', icon: 'FaLinkedin' }
   ];
 
   const getSocialIcon = (iconName) => {
-    const iconMap = {
-      youtube: FaIcons.FaYoutube,
-      github: FaIcons.FaGithub,
-      instagram: FaIcons.FaInstagram,
-      linkedin: FaIcons.FaLinkedin
-    };
-    return iconMap[iconName] || null;
+    const IconComponent = FaIcons[iconName];
+    return IconComponent ? <IconComponent className="social-icon" /> : null;
   };
 
   return (
@@ -82,7 +77,7 @@ function Contact() {
         <p className="contact-description">
           Let's connect and discuss your next project
         </p>
-        
+
         <div className="contact-content">
           <div className="contact-info-section">
             <h3 className="section-title">Get In Touch</h3>
@@ -91,9 +86,9 @@ function Contact() {
                 <div key={index} className="contact-info-card">
                   <div className="contact-icon">{info.icon}</div>
                   <div className="contact-details">
-                    <strong className="contact-label">{info.label}:</strong>
+                    <strong className="contact-label">{info.label}</strong>
                     {info.link ? (
-                      <a href={info.link} target="_blank" rel="noopener noreferrer" className="contact-link">
+                      <a href={info.link} className="contact-link">
                         {info.value}
                       </a>
                     ) : (
@@ -104,51 +99,51 @@ function Contact() {
               ))}
             </div>
           </div>
-          
+
           <div className="contact-form-section">
             <form className="contact-form" onSubmit={handleSubmit}>
               <h3 className="section-title">Send Message</h3>
               <div className="form-group">
-                <input 
-                  type="text" 
-                  name="name" 
-                  placeholder="Your Name" 
-                  required 
-                  value={form.name} 
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  value={form.name}
                   onChange={handleChange}
                   disabled={isLoading}
                   className="form-input"
                 />
               </div>
               <div className="form-group">
-                <input 
-                  type="email" 
-                  name="email" 
-                  placeholder="Your Email" 
-                  required 
-                  value={form.email} 
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  value={form.email}
                   onChange={handleChange}
                   disabled={isLoading}
                   className="form-input"
                 />
               </div>
               <div className="form-group">
-                <textarea 
-                  name="message" 
-                  placeholder="Your message " 
-                  rows="5" 
-                  required 
-                  value={form.message} 
+                <textarea
+                  name="message"
+                  placeholder="Your message "
+                  rows="5"
+                  required
+                  value={form.message}
                   onChange={handleChange}
                   disabled={isLoading}
                   className="form-textarea"
                 ></textarea>
               </div>
               <button type="submit" disabled={isLoading} className="form-button">
-                {isLoading ? 'Sending...' : 'Send message'}
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
               {status && (
-                <p className={`status-message ${status.includes('succes') ? 'success' : 'error'}`}>
+                <p className={`status-message ${status.includes('success') ? 'success' : 'error'}`}>
                   {status}
                 </p>
               )}
@@ -160,15 +155,12 @@ function Contact() {
           <div className="social-section">
             <h3 className="section-title">Find Me On</h3>
             <div className="social-links">
-              {socialLinks.map((link, index) => {
-                const IconComponent = getSocialIcon(link.icon);
-                return (
-                  <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="social-card">
-                    {IconComponent && <IconComponent className="social-icon" />}
-                    <span className="social-name">{link.name}</span>
-                  </a>
-                );
-              })}
+              {socialLinks.map((link, index) => (
+                <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="social-card">
+                  {getSocialIcon(link.icon)}
+                  <span className="social-name">{link.name}</span>
+                </a>
+              ))}
             </div>
           </div>
 

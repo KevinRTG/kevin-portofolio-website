@@ -13,26 +13,35 @@ const StarBackground = () => {
       init={particlesInit}
       options={{
         fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#ffffffff" },
+        background: { color: "transparent" },
         particles: {
-          number: { value: 150 },
-          color: { value: "#000000ff" }, // ✅ abu gelap
+          number: { value: 100 },
+          color: { value: "#38bdf8" }, // Light blue/cyan
           shape: { type: "circle" },
           opacity: {
-            value: 0.8,
+            value: 0.5,
             random: true,
-            anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false },
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
           },
           size: {
-            value: 1.5,
+            value: 2,
             random: true,
+            anim: { enable: true, speed: 2, size_min: 0.3, sync: false },
           },
           move: {
             enable: true,
-            speed: 1.0,
-            direction: "bottom",
+            speed: 0.8,
+            direction: "none",
             random: true,
+            straight: false,
             outModes: { default: "out" },
+          },
+          links: {
+            enable: true,
+            distance: 150,
+            color: "#38bdf8",
+            opacity: 0.2,
+            width: 1,
           },
         },
         detectRetina: true,

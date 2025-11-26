@@ -1,82 +1,49 @@
+/* Services Section */
 .services {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
-  min-height: 50vh;
-  transition: all 0.5s ease-out;
-}
-
-.fade-in {
-  opacity: 0;
-  filter: blur(10px);
-  transform: scale(1.02);
-  animation: fadeInEffect 0.5s ease-out forwards;
-}
-
-@keyframes fadeInEffect {
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
+  padding: var(--section-spacing) 0;
+  position: relative;
 }
 
 .services-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 .services-header {
-  font-size: clamp(32px, 4vw, 48px);
-  background: linear-gradient(135deg, #000000ff 0%, #475569 100%);
-  color: #1e293b;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.services-title {
-  font-size: clamp(32px, 4vw, 48px);
-  background: linear-gradient(135deg, #000000ff 0%, #475569 100%);
-  color: #1e293b;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 800;
 }
 
 .services-descriptions {
-  font-size: 18px;
-  color: #64748b;
   text-align: center;
-  margin-bottom: 60px;
-  max-width: 600px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .services-card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px 30px;
+  background: var(--bg-card);
+  padding: 2.5rem;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 123, 255, 0.1);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .services-card::before {
@@ -86,9 +53,10 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
+  background: var(--gradient-primary);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
+  transform-origin: left;
 }
 
 .services-card:hover::before {
@@ -97,15 +65,16 @@
 
 .services-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 123, 255, 0.15);
-  border-color: rgba(0, 123, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .services-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-normal);
+  display: inline-block;
 }
 
 .services-card:hover .services-icon {
@@ -113,54 +82,49 @@
 }
 
 .services-title {
-  font-size: 24px;
-  color: #000000ff;
-  margin-bottom: 15px;
-  font-weight: 600;
-  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .services-description {
-  font-size: 16px;
-  color: #64748b;
+  font-size: 1rem;
+  color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 25px;
-  text-align: center;
+  margin-bottom: 2rem;
+  flex: 1;
 }
 
 .services-features {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .services-features li {
-  padding: 8px 0;
-  color: #475569;
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
   position: relative;
-  padding-left: 20px;
+  padding-left: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .services-features li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #007bff;
+  color: var(--primary-light);
   font-weight: bold;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .services {
-    padding: 60px 15px;
-  }
-  
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .services-card {
-    padding: 30px 20px;
   }
 }

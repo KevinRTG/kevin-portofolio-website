@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import useInView from '../../useInView';
 import '../css/About.css';
-import { FiArrowUpRight } from 'react-icons/fi'; // untuk ikon panah
+import { FiArrowUpRight } from 'react-icons/fi';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -27,7 +27,7 @@ const About = () => {
 
   const services = [
     "UI/UX Design & Prototyping",
-    "Wireframing & User Research", 
+    "Wireframing & User Research",
     "Next.js Front-end Development",
     "React.js Functional Components",
     "Tailwind CSS & Bootstrap",
@@ -44,13 +44,13 @@ const About = () => {
         <p className="about-description">
           Passionate Computer Engineering student with expertise in UI/UX Design and Front-End Development
         </p>
-        
+
         <div className="about-content">
           <div className="about-intro">
             <p>
               Hello! I am Kevin Suyadi Ritonga, a Computer Engineering student at Pelita Bangsa University
               with a passion for UI/UX Design and Front-End Development. I enjoy creating
-              engaging and functional digital experiences. 
+              engaging and functional digital experiences.
               My journey in the world of technology began with an interest in web design and development.
               I continue to learn and hone my skills in creating user-friendly and responsive interfaces using modern technology.
             </p>
@@ -71,10 +71,10 @@ const About = () => {
           <div className="about-section">
             <h3 className="section-title">What I Do</h3>
             <div className="services-grid">
-              {services.map((services, index) => (
+              {services.map((service, index) => (
                 <div key={index} className="services-item">
                   <span className="services-bullet">•</span>
-                  <span>{services}</span>
+                  <span>{service}</span>
                 </div>
               ))}
             </div>
@@ -84,12 +84,11 @@ const About = () => {
             <h3 className="section-title">Tools I Use</h3>
             <div className="tools-grid">
               {tools.map((tool, index) => (
-                <div key={index} className="tool-card">
-                  <img 
-                    src={tool.icon} 
-                    alt={tool.name} 
+                <div key={index} className="tool-card" title={tool.name}>
+                  <img
+                    src={tool.icon}
+                    alt={tool.name}
                     className="tool-icon"
-                    title={tool.name}
                   />
                 </div>
               ))}
@@ -117,9 +116,9 @@ const About = () => {
           </div>
 
           {/* View Full Resume */}
-          <div className="about-section resume-download">
-            <a 
-              href="/Resume Kevin_Suyadi_Ritonga.pdf" // path ke file resume kamu di public folder
+          <div className="resume-download">
+            <a
+              href="/Resume Kevin_Suyadi_Ritonga.pdf"
               download
               className="resume-link"
             >

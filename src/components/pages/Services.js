@@ -4,7 +4,7 @@ import '../css/Services.css';
 
 const Services = () => {
   const servicesRef = useRef(null);
-  const isVisible = useInView(servicesRef, 0.3); 
+  const isVisible = useInView(servicesRef, 0.3);
 
   const services = [
     {
@@ -31,7 +31,7 @@ const Services = () => {
   ];
 
   return (
-      <section
+    <section
       id="services"
       ref={servicesRef}
       className={`services ${isVisible ? 'fade-in' : 'fade-init'}`}
@@ -41,15 +41,15 @@ const Services = () => {
         <p className="services-descriptions">
           The professional services I offer to help realize your digital vision
         </p>
-        
+
         <div className="services-grid">
-          {services.map(services => (
-            <div key={services.id} className="services-card">
-              <div className="services-icon">{services.icon}</div>
-              <h3 className="services-title">{services.title}</h3>
-              <p className="services-description">{services.description}</p>
+          {services.map(service => (
+            <div key={service.id} className="services-card">
+              <div className="services-icon">{service.icon}</div>
+              <h3 className="services-title">{service.title}</h3>
+              <p className="services-description">{service.description}</p>
               <ul className="services-features">
-                {services.features.map((feature, index) => (
+                {service.features.map((feature, index) => (
                   <li key={index}>{feature}</li>
                 ))}
               </ul>

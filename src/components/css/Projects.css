@@ -1,196 +1,167 @@
+/* Projects Section */
 .projects {
-   padding: 80px 20px;
-   background: linear-gradient(135deg, #ffffffff 0%, #ffffffff 100%);
-   min-height: 50vh;
-   text-align: center;
-   transition: all 1s ease-out;
-  }
+  padding: var(--section-spacing) 0;
+  position: relative;
+}
 
-.fade-in {
+.projects-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.projects-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
   opacity: 0;
-  filter: blur(10px);
-  transform: scale(1.02);
-  animation: fadeInEffect 0.5s ease-out forwards;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes fadeInEffect {
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
+.project-card:hover .project-overlay {
+  opacity: 1;
 }
-  
-  .projects-title {
-    font-size: clamp(32px, 4vw, 48px);
-    color: #1e293b;
-    margin-bottom: 10px;
-  }
-  
-  .projects-descripti {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 40px;
-  }
 
-  .projects-description {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 40px;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .project-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .project-details {
-    padding: 20px;
-  }
-  
-  .project-title {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-bottom: 10px;
-  }
-  
-  .project-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-     text-align: left;
-  }
+.project-details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-  .projects-description {
-    text-align: center;
-  }
+.project-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
 
-  .read-more-button {
+.project-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.read-more-button {
   background: none;
   border: none;
-  color: #0070f3;
+  color: var(--primary-light);
   cursor: pointer;
   font-size: 0.9rem;
-  margin-left: 5px;
+  font-weight: 600;
   padding: 0;
+  margin-left: 0.5rem;
+  transition: color var(--transition-fast);
 }
-  .read-more-button:hover {
+
+.read-more-button:hover {
+  color: var(--primary);
   text-decoration: underline;
 }
 
-  
-  .project-technologies {
-  margin-top: 8px;
+.project-technologies {
   display: flex;
   flex-wrap: wrap;
-  text-align: left;
-  gap:  8px;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-badge {
-  background-color: #f3f4f6;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #374151;
-  border: 1px solid #d1d5db;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-  .project-link {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .project-link:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 768px) {
-  .projects {
-    padding: 60px 16px;
-  }
-
-  .project-image {
-    height: 160px;
-  }
-
-  .project-title {
-    font-size: 1.25rem;
-  }
-
-  .project-description {
-    font-size: 0.95rem;
-  }
-
-  .tech-badge {
-    font-size: 11px;
-    padding: 3px 6px;
-  }
-
-  .project-link {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  .read-more-button {
-    font-size: 0.85rem;
-  }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  margin-top: auto;
 }
 
-@media (max-width: 480px) {
-  .projects-title {
-    font-size: 1.8rem;
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .projects-description {
-    font-size: 1rem;
-  }
-
-  .project-details {
-    padding: 16px;
-  }
-
-  .project-image {
-    height: 140px;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-  }
-
-  .tech-badge {
-    font-size: 10px;
-  }
-
-  .project-link {
-    font-size: 0.85rem;
+  .project-image-container {
+    height: 200px;
   }
 }

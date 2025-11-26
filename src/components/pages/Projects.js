@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
 import useInView from '../../useInView';
 import '../css/Projects.css';
+import { FiExternalLink } from 'react-icons/fi';
 
 function Projects() {
   const projectsRef = useRef(null);
-  const isVisible = useInView(projectsRef, 0.3); 
+  const isVisible = useInView(projectsRef, 0.3);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const toggleExpand = (index) => {
@@ -17,7 +18,7 @@ function Projects() {
       description: "I created and implemented this company profile website project to offer to a specific company that needed a simple and easy-to-use Company Profile. This website was built using the Next.js framework.",
       image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/preview.png?raw=true",
       link: "https://solusidigital.my.id/",
-      technologies: ["Next.js","Nodemailer", "Prisma", "Tailwind CSS", "TypeScript"],
+      technologies: ["Next.js", "Nodemailer", "Prisma", "Tailwind CSS", "TypeScript"],
     },
     {
       title: "GKO Cibitung Website",
@@ -34,47 +35,56 @@ function Projects() {
       ref={projectsRef}
       className={`projects ${isVisible ? 'fade-in' : 'fade-init'}`}
     >
-      <h2 className="projects-title">Projects</h2>
-      <p className="projects-description">
-        Explore the best projects that I have worked on
-      </p>
-      <div className="projects-grid">
-        {projects.map((project, index) => {
-          const isExpanded = expandedIndex === index;
-          const shortDescription = project.description.slice(0, 120) + '...';
+      <div className="projects-container">
+        <h2 className="projects-title">Featured Projects</h2>
+        <p className="projects-description">
+          Explore the best projects that I have worked on
+        </p>
+        <div className="projects-grid">
+          {projects.map((project, index) => {
+            const isExpanded = expandedIndex === index;
+            const shortDescription = project.description.slice(0, 120) + '...';
 
-          return (
-            <div className="project-card" key={index}>
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
-              <div className="project-details">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">
-                  {isExpanded ? project.description : shortDescription}
-                  <button
-                    className="read-more-button"
-                    onClick={() => toggleExpand(index)}
-                  >
-                    {isExpanded ? 'Show less' : 'Read more'}
-                  </button>
-                </p>
-                <div className="project-technologies">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
+            return (
+              <div className="project-card" key={index}>
+                <div className="project-image-container">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
+                  <div className="project-overlay">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                      View Live <FiExternalLink style={{ marginLeft: '8px' }} />
+                    </a>
+                  </div>
                 </div>
-                <a href={project.link} className="project-link">
-                  View Projects
-                </a>
+                <div className="project-details">
+                  <h3 className="project-title">{project.title}</h3>
+                  <div className="project-technologies">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="tech-badge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="project-description">
+                    {isExpanded ? project.description : shortDescription}
+                    <button
+                      className="read-more-button"
+                      onClick={() => toggleExpand(index)}
+                    >
+                      {isExpanded ? 'Show less' : 'Read more'}
+                    </button>
+                  </p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link" style={{ marginTop: 'auto', width: 'fit-content' }}>
+                    View Details
+                  </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import logo from '../img/logo.png';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
 
@@ -32,7 +33,22 @@ const Header = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      // Active section detection
+      const sections = ['home', 'about', 'services', 'projects', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.top <= 300;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
+    };
+
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
@@ -40,15 +56,17 @@ const Header = () => {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    const target = document.querySelector(targetId);
+    const id = targetId.replace('#', '');
+    const target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
     }
     closeMenu();
   };
 
   return (
-    <nav className={`header ${!isScrolled ? 'transparent' : ''}`}>
+    <nav className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-content">
         {/* Logo */}
         <div className="logo-container">
@@ -57,64 +75,44 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Menu (tengah) */}
+        {/* Menu */}
         <div className={`menu ${isMenuOpen ? 'menu-open' : ''}`} ref={menuRef}>
           <ul className="menu-list">
-            <li className="menu-item">
-              <a href="#home" className="menu-link" onClick={(e) => handleNavClick(e, '#home')}>
-                Home
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="#about" className="menu-link" onClick={(e) => handleNavClick(e, '#about')}>
-                About
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="#services" className="menu-link" onClick={(e) => handleNavClick(e, '#services')}>
-                Services
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="#projects" className="menu-link" onClick={(e) => handleNavClick(e, '#projects')}>
-                Projects
-              </a>
-            </li>
-            <li className="menu-item">
-              <a href="#contact" className="menu-link" onClick={(e) => handleNavClick(e, '#contact')}>
-                Contact
-              </a>
-            </li>
+            {['Home', 'About', 'Services', 'Projects'].map((item) => (
+              <li className="menu-item" key={item}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className={`menu-link ${activeSection === item.toLowerCase() ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, `#${item.toLowerCase()}`)}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Social Icons (kanan) */}
+        {/* Actions */}
         <div className="header-actions">
           <div className="social-icons">
-            <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube Channel"><i className="fab fa-youtube"></i></a>
-            <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub Profile"><i className="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram Profile"><i className="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Linkedin Profile"><i className="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@kevindoots" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
+            <a href="https://github.com/KevinRTG" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub"><i className="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/kepin.sr/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/kevin-suyadi-ritonga-909108292" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
           </div>
 
-          {isScrolled && (
-            <button
-              ref={toggleRef}
-              className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
-              onClick={toggleMenu}
-              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <span className="menu-toggle-bar"></span>
-              <span className="menu-toggle-bar"></span>
-              <span className="menu-toggle-bar"></span>
-            </button>
-          )}
+          <button
+            ref={toggleRef}
+            className={`menu-toggle ${isMenuOpen ? 'menu-toggle-active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span className="menu-toggle-bar"></span>
+            <span className="menu-toggle-bar"></span>
+            <span className="menu-toggle-bar"></span>
+          </button>
         </div>
       </div>
-
-      {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
     </nav>
   );
 };

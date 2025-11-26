@@ -5,11 +5,11 @@ import '../css/Home.css';
 import About from './About';
 import Services from './Services';
 import Projects from './Projects';
-import Contact from './Contact';
+// import Contact from './Contact';
 
 const Home = () => {
   const homeRef = useRef(null);
-  const isVisible = useInView(homeRef, 0.3); // threshold 0.3
+  const isVisible = useInView(homeRef, 0.3);
 
   return (
     <>
@@ -22,14 +22,15 @@ const Home = () => {
         <div className="home-container">
           <div className="home-content">
             <div className="hero-text">
-              <h1 className="home-greeting">Hello,</h1>
+              <h1 className="home-greeting">Hello, I'm</h1>
               <h2 className="home-title">
-                I'm <span className="home-name">Kevin Suyadi Ritonga</span>
+                <span className="home-name">Kevin Ritonga</span>
               </h2>
               <p className="home-description">
-                UI/UX Designer, Front-End Development <br /> From Indonesia
+                A passionate Front-end Developer & UI/UX Designer from Indonesia.
+                I craft stunning, user-centric digital experiences with modern technologies.
               </p>
-              <a href="#about" className="home-button">About Me</a>
+              <a href="#about" className="home-button">Explore My Work</a>
             </div>
             <div className="hero-image">
               <img
@@ -58,9 +59,9 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
+      {/* <section id="contact">
         <Contact />
-      </section>
+      </section> */}
     </>
   );
 };
