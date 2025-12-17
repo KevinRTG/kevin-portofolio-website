@@ -100,9 +100,9 @@ const About = () => {
             <div className="education-card">
               <h4 className="education-title">Pelita Bangsa University</h4>
               <div className="education-details">
-                <p><strong>Major:</strong> Computer Engineering</p>
-                <p><strong>Year:</strong> 2021 – Present</p>
-                <p><strong>Relevant Courses:</strong> Web Programming, Human Computer Interaction, Mobile Programming, Database Systems</p>
+                <p><strong>Major:</strong> Informatics Engineering</p>
+                <p><strong>Year:</strong> Jul 2021 – Nov 2025</p>
+                <p><strong>Relevant Courses:</strong> Web Programming, Mobile Programming, Database Systems</p>
               </div>
             </div>
           </div>
