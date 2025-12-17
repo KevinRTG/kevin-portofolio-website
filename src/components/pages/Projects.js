@@ -27,6 +27,13 @@ function Projects() {
       link: "https://github.com/KevinRTG/jemaat-app",
       technologies: ["Next.js", "Nodemailer", "React", "Prisma", "Tailwind CSS", "TypeScript"],
     },
+    {
+      title: "CV. JAN Nusantara",
+      description: "The CV. JAN Nusantara website is a professional digital platform representing a construction company based in Bekasi, West Java, Indonesia. It highlights the company’s vision of delivering innovative, high-quality, and impactful construction solutions, while its mission emphasizes reliability, sustainability, and integrity in every project. The site provides clear sections for company profile, products, services, and contact information, ensuring accessibility and trust for clients and partners. Overall, it serves as a modern corporate showcase that strengthens brand credibility and communicates JAN Nusantara’s commitment to excellence in the construction industry.",
+      image: "https://github.com/KevinRTG/kevin-portofolio-website/blob/master/public/images/jannusantara.png?raw=true",
+      link: "https://jan-nusantara.vercel.app/",
+      technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "TypeScript"],
+    },
   ];
 
   return (
